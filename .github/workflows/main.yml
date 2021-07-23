@@ -33,10 +33,11 @@ jobs:
         hexo clean
         hexo generate
 
-    - name: Deploy files
-      uses: SamKirkland/FTP-Deploy-Action@4.1.0
+    - name: 📂 Sync files
+      uses: airvzxf/ftp-deployment-action@latest
       with:
         server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
+        user: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./public/
+        local_dir: "./public"
+        delete: "true"
