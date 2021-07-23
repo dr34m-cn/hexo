@@ -1,5 +1,5 @@
 ---
-title: NSA工具包windows 0day验证之IIS6.0漏洞利用
+title: NSA工具包验证之IIS6.0漏洞利用
 date: 2017-06-15 21:20:05
 tags: 网络安全
 ---

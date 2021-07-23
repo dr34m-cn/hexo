@@ -1,7 +1,7 @@
 ---
 title: hexo-yilia主题相册
 date: 2017-12-17 16:27:43
-tags: 经验
+tags: [编程,前端]
 ---
 ### 起由
 从yilia作者[Litten的博客](http://litten.me/)看到了他的相册，蛮喜欢的，就想给自己也弄一个，于是找了到他的博客在github上边的备份下载了source/photos文件夹，但是没有get到作者的方法，只好稍作修改把照片放到本地实现了作者博客中的效果。

@@ -66,11 +66,11 @@ top: true
 # Miscellaneous
 baidu_analytics: ''
 google_analytics: ''
-favicon: https://other-1252906577.costj.myqcloud.com/favicon.ico
+favicon: //cdn.ctftools.com/img/favicon.ico
 
 #你的头像url
-avatar: https://others-1252906577.costj.myqcloud.com/img/avatar.jpg
-
+avatar: https://img.ctftools.com/imgs/2020/11/a101858209e03d25.jpg
+# https://others-1252906577.costj.myqcloud.com/img/avatar.jpg
 #是否开启分享
 share_jia: true
 
@@ -121,11 +121,9 @@ smart_menu:
   aboutme: '关于我'
 
 friends:
+  Se7en's Blog: http://www.se7ensec.cn/
   CTF工具下载: https://www.ctftools.com/
   一只单身猿: https://www.yejinmo.com/
-  Se7en's Blog: http://www.se7ensec.cn/
-  江sir's blog: http://www.blogsir.com.cn/
-  Zheng-Fu Xu: http://www.xuzhengfu.com/
-  NcrIdfsWriter: http://ncridfswriter.minelandcn.com/
+  HaiLan's Blog: http://blog.jhailan.cn/
 
-aboutme: 一九九七<br>生于江苏<br>喜孤厌闹
+aboutme: 一九九七<br/>生于江苏<br/>喜孤厌闹

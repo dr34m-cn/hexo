@@ -1,7 +1,7 @@
 ---
 title: 在ubuntu安装jdk并配置环境变量
 date: 2017-09-21 17:11:43
-tags: 经验
+tags: 运维
 ---
 
 首先到java官网下载jdk:[http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)

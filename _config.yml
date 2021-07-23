@@ -94,8 +94,6 @@ jsonContent:
         tags: true
 
 # Deployment
-## Docs: https://hexo.io/docs/deployment.html
+## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: git
-  repo: git@github.com:dr34-m/dr34-m.github.io.git
-  branch: master
+  type: ''

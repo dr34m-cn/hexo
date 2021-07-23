@@ -1,5 +1,5 @@
 ---
-title: NSA工具包windows 0day验证之RDP漏洞利用
+title: NSA工具包验证之RDP漏洞利用
 date: 2017-06-15 21:32:39
 tags: 网络安全
 ---

@@ -1,7 +1,7 @@
 ---
 title: Hexo安装配置并托管至github
 date: 2017-12-07 18:27:36
-tags: 经验
+tags: 运维
 toc: true
 ---
 所有可能用到的工具或者文件都放在百度网盘：链接：[https://pan.baidu.com/s/1mhLRnk8](https://pan.baidu.com/s/1mhLRnk8) 提取密码：7ott
@@ -11,7 +11,7 @@ toc: true
 
 1.1从[官网](https://git-scm.com/download/win)或者上边提供的百度网盘下载Git安装包，由于众所周知的原因，官网下载十分缓慢。下载完安装即可，中间会让你选择默认编辑器，如果不习惯Vim推荐Notepad++作为默认编辑器，如图
 <!--more-->
-![1](../../../imgs/233/233-1.jpg)
+![1](/imgs/233/233-1.jpg)
 
 其他保持默认即可。
 
@@ -92,9 +92,9 @@ hexo s
 #### 1.注册github账号并创建Repository
 
 1.1注册账号就不多说了，登陆之后点击`new repository`，如图
-![2](../../../imgs/233/233-2.jpg)
+![2](/imgs/233/233-2.jpg)
 然后编辑名称为xxx.github.io，xxx为你的用户名，可以添加一些描述，如图
-![3](../../../imgs/233/233-3.jpg)
+![3](/imgs/233/233-3.jpg)
 完成之后点击`Create repository`
 
 #### 2.本地与github建立安全联系
@@ -102,7 +102,7 @@ hexo s
 2.1生成ssh key
 
 2.1.1如图，打开Git Bash
-![4](../../../imgs/233/233-4.jpg)
+![4](/imgs/233/233-4.jpg)
 
 2.1.2创建.ssh文件夹
 ```sh
@@ -120,8 +120,8 @@ ssh-keygen -t rsa -C "xxxx@xxx.com"
 输完命令后敲击三次回车，设置的密码为空，生成key成功
 
 2.1.5打开`C:\用户\你的用户名`目录进入.ssh文件夹，用Notepad++或者其他编辑器打开id_rsa.pub，复制里面的内容添加到你github或者bitbucket ssh设置里即可，如下图
-![5](../../../imgs/233/233-5.jpg)
-![6](../../../imgs/233/233-6.jpg)
+![5](/imgs/233/233-5.jpg)
+![6](/imgs/233/233-6.jpg)
 标题随意填写
 
 #### 3.部署博客到github
