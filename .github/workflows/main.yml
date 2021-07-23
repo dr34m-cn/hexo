@@ -33,7 +33,7 @@ jobs:
         hexo clean
         hexo generate
 
-    - name: Sync files
+    - name: Deploy files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
         server: ${{ secrets.FTP_SERVER }}
