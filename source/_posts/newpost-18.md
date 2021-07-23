@@ -79,6 +79,10 @@ jobs:
 
 如果需要通过ftp传到国内云加速访问，可以在上边的内容紧接着加上以下内容，具体配置参考[FTP-Deploy-Action](https://github.com/SamKirkland/FTP-Deploy-Action)
 
+**ftp连接国内会比较慢，尤其是第一次，因为要全量上传，之后增量上传会快很多。**
+
+还有**注意服务器要放行FTP被动模式端口30000-40000**，否则能创建文件夹，但不能上传文件。
+
 ```yml
     - name: Deploy Hexo to Cloud
       uses: SamKirkland/FTP-Deploy-Action@4.1.0
@@ -89,6 +93,6 @@ jobs:
         local-dir: ./public/
 ```
 
-注意这需要在私有仓库，`Settings`-`Secrets`，`New repository secret`，新建相应secret
+注意这需要在私有仓库，`Settings`-`Secrets`，`New repository secret`，新建相应secret，方法与上边新建`HEXO_DEPLOY_PRIVATE_KEY`一样，`FTP_SERVER`不用带`ftp://`之类的，直接填入`ftp.xxx.com`即可。
 
 参考文章：[利用GitHub+Actions自动部署Hexo博客](https://blog.csdn.net/u012208219/article/details/106883054#comments_15417337)，[GitHub Actions 自动发布Hexo 并通过 FTP上传 到阿里云ECS](https://moeci.com/posts/github-actions-hexo-ftp/)
