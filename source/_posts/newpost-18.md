@@ -35,45 +35,60 @@ on:
 jobs:
   build: 
     runs-on: ubuntu-latest 
-        
+
     steps:
     # check it to your workflow can access it
     # from: https://github.com/actions/checkout
     - name: Checkout Repository master branch
-      uses: actions/checkout@master 
-      
-    # from: https://github.com/actions/setup-node  
+      uses: actions/checkout@master
+
+    # from: https://github.com/actions/setup-node
     - name: Setup Node.js 11.x 
       uses: actions/setup-node@master
       with:
         node-version: "11.x"
-    
+
     - name: Setup Hexo Dependencies
       run: |
         npm install hexo-cli -g
         npm install
-    
+
     - name: Setup Deploy Private Key
       env:
         HEXO_DEPLOY_PRIVATE_KEY: ${{ secrets.HEXO_DEPLOY_PRIVATE_KEY }}
       run: |
         mkdir -p ~/.ssh/
-        echo "$HEXO_DEPLOY_PRIVATE_KEY" > ~/.ssh/id_rsa 
+        echo "$HEXO_DEPLOY_PRIVATE_KEY" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
         ssh-keyscan github.com >> ~/.ssh/known_hosts
-        
+
     - name: Setup Git Infomation
-      run: | 
-        git config --global user.name '名字' 
+      run: |
+        git config --global user.name '名字'
         git config --global user.email '邮箱'
-    - name: Deploy Hexo 
+
+    - name: Deploy Hexo
       run: |
         hexo clean
-        hexo generate 
+        hexo generate
         hexo deploy
 
 ```
 
 完成后点击右上角`Start commit`-`Commit new ile`，这个Actions是提交代码后触发，快去试试吧，提交后约需要1分钟部署，之后就能在你托管的页面看到最新的博客了
 
-参考文章：[利用GitHub+Actions自动部署Hexo博客](https://blog.csdn.net/u012208219/article/details/106883054#comments_15417337)
+如果需要通过ftp传到国内云加速访问，可以在上边的内容紧接着加上以下内容，具体配置参考[FTP-Deploy-Action](https://github.com/SamKirkland/FTP-Deploy-Action)
+
+```yml
+    - name: Deploy Hexo to Cloud
+      uses: SamKirkland/FTP-Deploy-Action@4.1.0
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./public/
+```
+
+注意这需要在私有仓库，`Settings`-`Secrets`，`New repository secret`，新建相应secret
+
+参考文章：[利用GitHub+Actions自动部署Hexo博客](https://blog.csdn.net/u012208219/article/details/106883054#comments_15417337)，[GitHub Actions 自动发布Hexo 并通过 FTP上传 到阿里云ECS](https://moeci.com/posts/github-actions-hexo-ftp/)
