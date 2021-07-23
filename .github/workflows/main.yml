@@ -28,8 +28,16 @@ jobs:
         npm install hexo-cli -g
         npm install
 
-    - name: Deploy Hexo 
+    - name: Deploy Hexo
       run: |
         hexo clean
-        hexo generate 
+        hexo generate
         hexo deploy
+
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.0.0
+      with:
+        server: ${{ secrets.FTP_SERVER }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        local-dir: ./public/
