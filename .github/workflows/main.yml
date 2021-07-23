@@ -32,7 +32,6 @@ jobs:
       run: |
         hexo clean
         hexo generate
-        hexo deploy
 
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
