@@ -9,7 +9,7 @@ on:
       
 jobs:
   build: 
-    runs-on: ubuntu-latest 
+    runs-on: ubuntu-latest
         
     steps:
     # check it to your workflow can access it
@@ -17,8 +17,8 @@ jobs:
     - name: Checkout Repository master branch
       uses: actions/checkout@master 
       
-    # from: https://github.com/actions/setup-node  
-    - name: Setup Node.js 11.x 
+    # from: https://github.com/actions/setup-node
+    - name: Setup Node.js 11.x
       uses: actions/setup-node@master
       with:
         node-version: "11.x"
@@ -32,12 +32,4 @@ jobs:
       run: |
         hexo clean
         hexo generate
-
-    - name: 📂 Sync files
-      uses: airvzxf/ftp-deployment-action@latest
-      with:
-        server: ${{ secrets.FTP_SERVER }}
-        user: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        local_dir: "./public"
-        delete: "true"
+        hexo deploy

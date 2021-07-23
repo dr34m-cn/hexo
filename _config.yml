@@ -95,17 +95,17 @@ jsonContent:
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
-deploy:
- type: git
- repo: git@github.com:dr34-m/dr34-m.github.io.git
- branch: master
 # deploy:
-#   type: ftpsync
-#   host: blog.ctftools.com
-#   user: blog.ctftools.com
-#   pass: y46pAR5nFNBbyjRT
-#   remote: /
-#   port: 21
-#   ignore: 
-#   connections: 1
-#   verbose: false
+#  type: git
+#  repo: git@github.com:dr34-m/dr34-m.github.io.git
+#  branch: master
+deploy:
+  type: ftpsync
+  host: blog.ctftools.com
+  user: blog.ctftools.com
+  pass: y46pAR5nFNBbyjRT
+  remote: /
+  port: 21
+  ignore: 
+  connections: 10
+  verbose: false
