@@ -1,5 +1,5 @@
 ---
-title: Hexo + Github Actions 实现提交代码自动部署
+title: Hexo + Github Actions 实现提交代码自动部署并通过FTP传到云服务器
 date: 2021-07-23 17:41:16
 tags: 运维
 ---
@@ -24,7 +24,7 @@ tags: 运维
 
 ```yml
 # workflow name
-name: Hexo Blog CI
+name: Hexo博客持续集成
 
 # master branch on push, auto run
 on: 
