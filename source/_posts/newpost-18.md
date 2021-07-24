@@ -39,21 +39,21 @@ jobs:
     steps:
     # check it to your workflow can access it
     # from: https://github.com/actions/checkout
-    - name: Checkout Repository master branch
+    - name: 检出仓库代码
       uses: actions/checkout@master
 
     # from: https://github.com/actions/setup-node
-    - name: Setup Node.js 11.x 
+    - name: 安装Node.js 11.x 
       uses: actions/setup-node@master
       with:
         node-version: "11.x"
 
-    - name: Setup Hexo Dependencies
+    - name: 安装Hexo依赖
       run: |
         npm install hexo-cli -g
         npm install
 
-    - name: Setup Deploy Private Key
+    - name: 配置部署私钥
       env:
         HEXO_DEPLOY_PRIVATE_KEY: ${{ secrets.HEXO_DEPLOY_PRIVATE_KEY }}
       run: |
@@ -62,12 +62,12 @@ jobs:
         chmod 600 ~/.ssh/id_rsa
         ssh-keyscan github.com >> ~/.ssh/known_hosts
 
-    - name: Setup Git Infomation
+    - name: 配置GIT信息
       run: |
         git config --global user.name '名字'
         git config --global user.email '邮箱'
 
-    - name: Deploy Hexo
+    - name: 部署Hexo到Github
       run: |
         hexo clean
         hexo generate
@@ -81,10 +81,10 @@ jobs:
 
 **ftp连接国内会比较慢，尤其是第一次，因为要全量上传，之后增量上传会快很多。**
 
-还有**注意服务器要放行FTP被动模式端口30000-40000**，否则能创建文件夹，但不能上传文件。
+还有**注意服务器要放行FTP被动模式端口**，否则能创建文件夹，但不能上传文件。被动模式端口可能是30000-40000，或者3000-4000，这个是可以在你的FTP服务端软件配置的，类似于`PassivePortRange 39000 40000`。
 
 ```yml
-    - name: Deploy Hexo to Cloud
+    - name: 部署Hexo到云服务器
       uses: SamKirkland/FTP-Deploy-Action@4.1.0
       with:
         server: ${{ secrets.FTP_SERVER }}

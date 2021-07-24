@@ -15,7 +15,7 @@ jobs:
     # check it to your workflow can access it
     # from: https://github.com/actions/checkout
     - name: 检出仓库代码
-      uses: actions/checkout@master 
+      uses: actions/checkout@master
       
     # from: https://github.com/actions/setup-node
     - name: 安装Node.js 11.x
