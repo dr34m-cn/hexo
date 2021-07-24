@@ -1,5 +1,5 @@
 # workflow name
-name: Hexo Blog CI
+name: Hexo博客持续集成
 
 # master branch on push, auto run
 on: 
@@ -14,21 +14,21 @@ jobs:
     steps:
     # check it to your workflow can access it
     # from: https://github.com/actions/checkout
-    - name: Checkout Repository master branch
+    - name: 检出仓库代码
       uses: actions/checkout@master 
       
     # from: https://github.com/actions/setup-node
-    - name: Setup Node.js 11.x
+    - name: 安装Node.js 11.x
       uses: actions/setup-node@master
       with:
         node-version: "11.x"
     
-    - name: Setup Hexo Dependencies
+    - name: 安装Hexo依赖
       run: |
         npm install hexo-cli -g
         npm install
 
-    - name: Setup Deploy Private Key
+    - name: 配置部署私钥
       env:
         HEXO_DEPLOY_PRIVATE_KEY: ${{ secrets.HEXO_DEPLOY_PRIVATE_KEY }}
       run: |
@@ -37,18 +37,18 @@ jobs:
         chmod 600 ~/.ssh/id_rsa
         ssh-keyscan github.com >> ~/.ssh/known_hosts
         
-    - name: Setup Git Infomation
+    - name: 配置GIT信息
       run: |
         git config --global user.name 'dr34-m'
         git config --global user.email '1416814478@qq.com'
 
-    - name: Deploy Hexo to Github
+    - name: 部署Hexo到Github
       run: |
         hexo clean
         hexo generate
         hexo deploy
 
-    - name: Deploy Hexo to Cloud
+    - name: 部署Hexo到云服务器
       uses: SamKirkland/FTP-Deploy-Action@4.1.0
       with:
         server: ${{ secrets.FTP_SERVER }}
