@@ -8,6 +8,8 @@ tags: [运维,持续集成]
 
 <!--more-->
 
+### 如果希望通过github的actions来实现，可以参考[Hexo + Github Actions 实现提交代码自动部署并通过FTP传到云服务器](https://blog.ctftools.com/2021/07/newpost-18/)
+
 ## 一、前提
 
 会用[hexo](/2017/12/post233/)、[svn](/2020/11/post246/)，拥有自己的服务器，安装好[jenkins](/2020/11/post247/)，并把hexo目录中文件同步到svn，其中`db.json`、`public/`、`node_modules/`无需上传，本文假设你已经把它上传到`svn://xxx.cn/hexo`，svn账号密码都为`admin`。
