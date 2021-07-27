@@ -8,4 +8,4 @@ tags: 经验
 
 <!--more-->
 
-![1](/imgs/244/1.png)
+![1](post244/1.png)
