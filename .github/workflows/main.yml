@@ -59,8 +59,10 @@ jobs:
       with:
         tag_name: ${{ github.run_id }}
         release_name: Release ${{ github.run_id }}
-        draft: false # 是否是草稿
-        prerelease: false # 是否是预发布
+         # 是否是草稿
+        draft: false
+         # 是否是预发布
+        prerelease: false
 
     - name: 上传构建结果到 Release
       id: upload-release-asset
