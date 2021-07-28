@@ -10,9 +10,11 @@ tags: 运维
 
 <!--more-->
 
+**本文涉及所有私钥密码等都非常重要，一定要配置到github项目中的`Secrets`里，不要图省事**
+
 ## 一、新建github私有仓库保存hexo源码
 
-不细说
+不细说，仓库也可以公开，配置到`Secrets`里的信息是非常安全的
 
 ## 二、Github Actions配置
 
@@ -79,11 +81,12 @@ jobs:
 
 完成后点击右上角`Start commit`-`Commit new ile`，这个Actions是提交代码后触发，快去试试吧，提交后约需要1分钟部署，之后就能在你托管的页面看到最新的博客了
 
-如果需要通过ftp传到国内云加速访问，可以在上边的内容紧接着加上以下内容，具体配置参考[FTP-Deploy-Action](https://github.com/SamKirkland/FTP-Deploy-Action)
+如果需要传到国内云加速访问，常见的有两种方式：
 
-**ftp连接国内会比较慢，尤其是第一次，因为要全量上传，之后增量上传会快很多。**
+#### 1.FTP方式(较慢，推荐下边的方法)
 
-还有**注意服务器要放行FTP被动模式端口**，否则能创建文件夹，但不能上传文件。被动模式端口可能是30000-40000，或者3000-4000，这个是可以在你的FTP服务端软件配置的，类似于`PassivePortRange 39000 40000`。
+可以在上边的内容紧接着加上以下内容，具体配置参考[FTP-Deploy-Action](https://github.com/SamKirkland/FTP-Deploy-Action)
+
 
 ```yml
     - name: 部署Hexo到云服务器
@@ -95,6 +98,27 @@ jobs:
         local-dir: ./public/
 ```
 
+**ftp连接会比较慢，尤其是第一次，因为要全量上传，之后增量上传会快很多。**
+
+还有**注意服务器要放行FTP被动模式端口**，否则能创建文件夹，但不能上传文件。被动模式端口可能是30000-40000，或者3000-4000，这个是可以在你的FTP服务端软件配置的，类似于`PassivePortRange 39000 40000`。
+
 注意这需要在私有仓库，`Settings`-`Secrets`，`New repository secret`，新建相应secret，方法与上边新建`HEXO_DEPLOY_PRIVATE_KEY`一样，`FTP_SERVER`不用带`ftp://`之类的，直接填入`ftp.xxx.com`即可。
 
-参考文章：[利用GitHub+Actions自动部署Hexo博客](https://blog.csdn.net/u012208219/article/details/106883054#comments_15417337)，[GitHub Actions 自动发布Hexo 并通过 FTP上传 到阿里云ECS](https://moeci.com/posts/github-actions-hexo-ftp/)
+#### 2.SSH方式
+
+SSH通常比FTP快很多，大概是几分钟和几秒钟的区别，具体配置参考[ssh-deploy](https://github.com/easingthemes/ssh-deploy)
+
+```yml
+    - name: 部署到云服务器
+      uses: easingthemes/ssh-deploy@main
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+        SOURCE: "./public/"
+        REMOTE_HOST: ${{ secrets.SERVER_HOST }}
+        REMOTE_USER: ${{ secrets.SERVER_USER }}
+        TARGET: "/www/wwwroot/blog.ctftools.com/"
+```
+
+其中`SERVER_SSH_KEY`为SSH私钥，可以参考[设置 SSH 通过密钥登录](https://www.runoob.com/w3cnote/set-ssh-login-key.html)，教程中得到的`id_rsa`文件内容就是私钥
+
+参考文章：[利用GitHub+Actions自动部署Hexo博客](https://blog.csdn.net/u012208219/article/details/106883054#comments_15417337)，[GitHub Actions 自动发布Hexo 并通过 FTP上传 到阿里云ECS](https://moeci.com/posts/github-actions-hexo-ftp/)，[githubActions部署文件到服务器](https://blog.csdn.net/qq_39846820/article/details/115422544)
