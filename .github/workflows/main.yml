@@ -75,3 +75,11 @@ jobs:
         asset_name: release.tgz
         asset_content_type: application/x-tgz
 
+    - name: 部署到云服务器
+      uses: easingthemes/ssh-deploy@main
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+        SOURCE: "./public/"
+        REMOTE_HOST: ${{ secrets.SERVER_HOST }}
+        REMOTE_USER: ${{ secrets.SERVER_USER }}
+        TARGET: "/www/wwwroot/blog.ctftools.com/"
