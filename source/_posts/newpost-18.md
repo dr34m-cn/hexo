@@ -85,7 +85,7 @@ jobs:
 
 #### 1.FTP方式(较慢，推荐下边的方法)
 
-可以在上边的内容紧接着加上以下内容，具体配置参考[FTP-Deploy-Action](https://github.com/SamKirkland/FTP-Deploy-Action)
+可以在上边的内容紧接着加上以下内容，具体配置参考[FTP-Deploy-Action](https://github.com/SamKirkland/FTP-Deploy-Action)，这个脚本在删除操作会报550错误，项目`Issues`也提到了这个问题，目前没有解决。
 
 
 ```yml
@@ -113,6 +113,7 @@ SSH通常比FTP快很多，大概是几分钟和几秒钟的区别，具体配�
       uses: easingthemes/ssh-deploy@main
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+        ARGS: "-avzr --delete"
         SOURCE: "./public/"
         REMOTE_HOST: ${{ secrets.SERVER_HOST }}
         REMOTE_USER: ${{ secrets.SERVER_USER }}
