@@ -28,7 +28,21 @@ jobs:
         npm install hexo-cli -g
         npm install
 
-    - name: 配置部署私钥
+    - name: 构建Hexo
+      run: |
+        hexo clean
+        hexo generate
+
+    - name: 部署到云服务器
+      uses: easingthemes/ssh-deploy@main
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
+        SOURCE: "./public/"
+        REMOTE_HOST: ${{ secrets.SERVER_HOST }}
+        REMOTE_USER: ${{ secrets.SERVER_USER }}
+        TARGET: "/www/wwwroot/blog.ctftools.com/"
+
+    - name: 配置Github部署私钥
       env:
         HEXO_DEPLOY_PRIVATE_KEY: ${{ secrets.HEXO_DEPLOY_PRIVATE_KEY }}
       run: |
@@ -37,16 +51,13 @@ jobs:
         chmod 600 ~/.ssh/id_rsa
         ssh-keyscan github.com >> ~/.ssh/known_hosts
         
-    - name: 配置GIT信息
+    - name: 配置Git信息
       run: |
         git config --global user.name 'dr34-m'
         git config --global user.email '1416814478@qq.com'
 
     - name: 部署Hexo到Github
-      run: |
-        hexo clean
-        hexo generate
-        hexo deploy
+      run: hexo deploy
 
     - name: 打包压缩
       run: tar -zcvf release.tgz public
@@ -75,11 +86,3 @@ jobs:
         asset_name: release.tgz
         asset_content_type: application/x-tgz
 
-    - name: 部署到云服务器
-      uses: easingthemes/ssh-deploy@main
-      env:
-        SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
-        SOURCE: "./public/"
-        REMOTE_HOST: ${{ secrets.SERVER_HOST }}
-        REMOTE_USER: ${{ secrets.SERVER_USER }}
-        TARGET: "/www/wwwroot/blog.ctftools.com/"
