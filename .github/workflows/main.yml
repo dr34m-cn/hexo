@@ -49,7 +49,7 @@ jobs:
         hexo deploy
 
     - name: 打包压缩
-     run: tar -zcvf release.tgz public
+      run: tar -zcvf release.tgz public
 
     - name: 发布 Release
       id: create_release
