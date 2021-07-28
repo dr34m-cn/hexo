@@ -120,6 +120,8 @@ SSH通常比FTP快很多，大概是几分钟和几秒钟的区别，具体配�
         TARGET: "/www/wwwroot/blog.ctftools.com/"
 ```
 
-其中`SERVER_SSH_KEY`为SSH私钥，可以参考[设置 SSH 通过密钥登录](https://www.runoob.com/w3cnote/set-ssh-login-key.html)，教程中得到的`id_rsa`文件内容就是私钥
+其中`SERVER_SSH_KEY`为SSH私钥，可以参考[设置 SSH 通过密钥登录](https://www.runoob.com/w3cnote/set-ssh-login-key.html)，教程中得到的`id_rsa`文件内容就是私钥。
+
+也可以参考[我的项目中的配置](https://github.com/dr34-m/hexo/blob/master/.github/workflows/main.yml)，我的项目优先完成国内云服务器部署，然后是托管到github，发布 Release（相当于存档）。
 
 参考文章：[利用GitHub+Actions自动部署Hexo博客](https://blog.csdn.net/u012208219/article/details/106883054#comments_15417337)，[GitHub Actions 自动发布Hexo 并通过 FTP上传 到阿里云ECS](https://moeci.com/posts/github-actions-hexo-ftp/)，[githubActions部署文件到服务器](https://blog.csdn.net/qq_39846820/article/details/115422544)
