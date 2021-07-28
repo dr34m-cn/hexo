@@ -57,8 +57,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.TOKEN }}
       with:
-        tag_name: ${{ github.ref }} # (tag)标签名称
-        release_name: Release ${{ github.ref }}
+        tag_name: ${{ github.run_id }}
+        release_name: Release ${{ github.run_id }}
         draft: false # 是否是草稿
         prerelease: false # 是否是预发布
 
