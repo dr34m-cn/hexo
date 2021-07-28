@@ -14,11 +14,13 @@ wordpress原来的邮件设置是有些鸡肋的，通过main()函数来发送�
 
 1.  首先打开wordpress后台，点击左侧插件，点击安装插件，在右侧搜索插件WP-Mail-SMTP，如图：
 <!--more-->
-![](https://blog-10039692.file.myqcloud.com/1489036656329_6693_1489036653721.jpg)
+![1489036656329_6693_1489036653721](post036/1489036656329_6693_1489036653721.jpg)
 2.  之后点击“现在安装”，然后启用，接着点击“设置(Settings)”，填入相关信息，如图：
-![](https://blog-10039692.file.myqcloud.com/1489038136450_9116_1489038133881.jpg)
-![](https://blog-10039692.file.myqcloud.com/1489038144780_5977_1489038141615.jpg)
-3.  接着点击下面保存设置，然后可以发送一封测试邮件，试试是否可用，不可用接着往下看。
+![1489038136450_9116_1489038133881](post036/1489038136450_9116_1489038133881.jpg)
+
+![1489038144780_5977_1489038141615](post036/1489038144780_5977_1489038141615-16274447195962.jpg)
+
+1.  接着点击下面保存设置，然后可以发送一封测试邮件，试试是否可用，不可用接着往下看。
 
 ### 开启OpenSSL
 
@@ -38,13 +40,14 @@ wordpress原来的邮件设置是有些鸡肋的，通过main()函数来发送�
 $message .= network_site_url("wp-login.php?action=rp&amp;amp;key=$key&amp;amp;login=" . rawurlencode($user_login), 'login');
 ```
 如图：
-![](https://blog-10039692.file.myqcloud.com/1489039931247_5787_1489039928640.jpg)
+![1489039931247_5787_1489039928640](post036/1489039931247_5787_1489039928640.jpg)
 并保存，其实就是把前面的"<"和后边的">"删掉；
+
 2.  打开wordpress目录下的wp-includes/pluggable.php，搜索network_site_url，约在1791行，修改为：
 ```php
 $message .= network_site_url("wp-login.php?action=rp&amp;amp;key=$key&amp;amp;login=" . rawurlencode($user-&gt;user_login), 'login') . "\r\n\r\n";
 ```
 如图：
-![](https://blog-10039692.file.myqcloud.com/1489040354613_3175_1489040351578.jpg)
+![1489040354613_3175_1489040351578](post036/1489040354613_3175_1489040351578.jpg)
 并保存，其实还是去掉了那对尖括号。
 至此，wordpress已经可以发送邮件了，同时也支持了用户的自动注册。
