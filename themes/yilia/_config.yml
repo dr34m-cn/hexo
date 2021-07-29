@@ -66,10 +66,10 @@ top: true
 # Miscellaneous
 baidu_analytics: ''
 google_analytics: ''
-favicon: //cdn.ctftools.com/img/favicon.ico
+favicon: /imgs/favicon.ico
 
 #你的头像url
-avatar: https://img.ctftools.com/imgs/2020/11/a101858209e03d25.jpg
+avatar: /imgs/a101858209e03d25.jpg
 # https://others-1252906577.costj.myqcloud.com/img/avatar.jpg
 #是否开启分享
 share_jia: false
