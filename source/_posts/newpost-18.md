@@ -1,7 +1,7 @@
 ---
 title: Hexo + Github Actions 实现提交代码自动部署并通过FTP传到云服务器
 date: 2021-07-23 17:41:16
-tags: 运维
+tags: [运维,经验]
 ---
 
 ### 本文要求已经对Hexo有一点了解，并且知道怎么托管hexo到github，如果您刚接触Hexo，可以参考[Hexo安装配置并托管至github](https://blog.ctftools.com/2017/12/post233/)
