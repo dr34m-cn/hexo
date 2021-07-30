@@ -88,7 +88,6 @@ jobs:
         tccli configure set region $REGION
 
     - name: 上传到腾讯云COS并刷新CDN
-
       run: |
         coscmd upload -rfs --delete ./public/ /
         tccli cdn PurgePathCache --cli-unfold-argument --Paths https://blog.ctftools.com/ --FlushType flush
