@@ -2,16 +2,11 @@
 title: h5实现一种自动滚动的告警列表
 date: 2020-11-12 14:25:44
 tags: 前端
-
 ---
 
-
-
-* [点击这里看效果](https://blog.ctftools.com/static_web/wrnList/index.html)，鼠标悬浮到告警列表会停止。
+* [项目地址](https://github.com/dr34-m/wrnlist)
 
 <!--more-->
-
-* 点击下载[wrnList.zip](https://blog.ctftools.com/static_web/wrnList/wrnList.zip) 。
 
 * `index.html`
 
