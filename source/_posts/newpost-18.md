@@ -10,9 +10,9 @@ toc: true
 
 <!--more-->
 
-### 本文要求已经对Hexo有一点了解，并且知道怎么把hexo源码放到github，如果您刚接触Hexo，可以参考[Hexo安装配置并托管至github](https://blog.ctftools.com/2017/12/post233/)
+**本文要求已经对Hexo有一点了解，并且知道怎么把hexo源码放到github，如果您刚接触Hexo，可以参考[Hexo安装配置并托管至github](https://blog.ctftools.com/2017/12/post233/)**
 
-### 如果不想依赖github，可以参考这套自建方案[centos下hexo + svn + jenkins实现博客自动部署](https://blog.ctftools.com/2020/11/post249/)、[svn提交后jenkins自动部署](https://blog.ctftools.com/2020/11/newpost-1/)
+**如果不想依赖github，可以参考这套自建方案[centos下hexo + svn + jenkins实现博客自动部署](https://blog.ctftools.com/2020/11/post249/)、[svn提交后jenkins自动部署](https://blog.ctftools.com/2020/11/newpost-1/)**
 
 # 实现过程
 
