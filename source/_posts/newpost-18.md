@@ -4,6 +4,7 @@ date: 2021-07-23 17:41:16
 tags: [运维,经验]
 toc: true
 ---
+
 # 最终成果
 
 编写文章后只需提交代码，之后自动构建hexo生成public文件夹，并自动将其发布到你需要的平台，还可以自动生成release用于存档，方便随时回滚到过去任意一版博客。
@@ -130,7 +131,6 @@ jobs:
     - name: 安装腾讯云依赖
       run: |
         sudo pip install coscmd
-        # 没有CDN需求去掉下行
         sudo pip install tccli
 
     - name: 配置腾讯云依赖
@@ -141,18 +141,35 @@ jobs:
         REGION: ap-shanghai #改为自己的地域
       run: |
         coscmd config -a $SECRET_ID -s $SECRET_KEY -b $BUCKET -r $REGION
-        # 没有CDN需求去掉下行
         tccli configure set secretId $SECRET_ID
-        # 没有CDN需求去掉下行
         tccli configure set secretKey $SECRET_KEY
-        # 没有CDN需求去掉下行
         tccli configure set region $REGION
 
     - name: 上传到腾讯云COS并刷新CDN
       run: |
         coscmd upload -rfs --delete ./public/ /
-        # 没有CDN需求去掉下行
         tccli cdn PurgePathCache --cli-unfold-argument --Paths https://blog.ctftools.com/ --FlushType flush
+```
+
+如果不需要刷新CDN则可以简化如下
+
+```yml
+    - name: 安装腾讯云依赖
+      run: |
+        sudo pip install coscmd
+
+    - name: 配置腾讯云依赖
+      env:
+        SECRET_ID: ${{ secrets.TCLOUD_API_ID }}
+        SECRET_KEY: ${{ secrets.TCLOUD_API_KEY }}
+        BUCKET: blog-1252906577 #改为自己的存储桶名称
+        REGION: ap-shanghai #改为自己的地域
+      run: |
+        coscmd config -a $SECRET_ID -s $SECRET_KEY -b $BUCKET -r $REGION
+
+    - name: 上传到腾讯云COS并刷新CDN
+      run: |
+        coscmd upload -rfs --delete ./public/ /
 ```
 
 更详细的教程，包括腾讯云相关配置可以参考[通过Github Actions部署静态网站到腾讯云COS，并自动刷新CDN](https://blog.ctftools.com/2021/07/newpost-20/)。提交后就会自动部署，去COS查看效果吧。
