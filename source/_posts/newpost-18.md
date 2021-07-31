@@ -204,6 +204,9 @@ deploy:
 将以下文件追加到仓库`\.github\workflows\main.yml`文件下，然后提交，注意缩进，`- name`要和上边的`- name`对齐。
 
 ```yml
+    - name: 打包压缩
+      run: tar -zcvf release.tgz public
+
     - name: 发布 Release
       id: create_release
       uses: actions/create-release@master
