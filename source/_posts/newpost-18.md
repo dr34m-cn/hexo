@@ -72,8 +72,9 @@ jobs:
 
 #### 3.1.1 通过FTP方式（很慢，不推荐）
 
-* 进入仓库-Settings-Secrets-New secret，分别新建三条名为`FTP_SERVER`、`FTP_USERNAME`和`FTP_PASSWORD`，值为FTP地址、FTP账号和FTP密码的secret，如需更多配置例如端口号等可以参考[FTP-Deploy-Action](https://github.com/SamKirkland/FTP-Deploy-Action)。
-* 存储在Secrets里的内容是很安全的，只有仓库所有者和协作者有权使用，但也仅限于使用，没有人可以查看其内容。
+进入仓库-Settings-Secrets-New secret，分别新建三条名为`FTP_SERVER`、`FTP_USERNAME`和`FTP_PASSWORD`，值为FTP地址、FTP账号和FTP密码的secret，如需更多配置例如端口号等可以参考[FTP-Deploy-Action](https://github.com/SamKirkland/FTP-Deploy-Action)。
+
+**存储在Secrets里的内容是很安全的，只有仓库所有者和协作者有权使用，但也仅限于使用，没有人可以查看其内容。**
 
 ![image-20210730110052838](newpost-18/image-20210730110052838.png)
 
@@ -95,7 +96,7 @@ jobs:
 
 进入仓库-Settings-Secrets-New secret，分别新建三条名为`SERVER_SSH_KEY`、`SERVER_HOST`和`SERVER_USER`，值为SSH私钥、SSH地址和SSH用户名的secret，如需更多配置例如端口号等可以参考[ssh-deploy](https://github.com/easingthemes/ssh-deploy)。
 
-* 存储在Secrets里的内容是很安全的，只有仓库所有者和协作者有权使用，但也仅限于使用，没有人可以查看其内容。
+**存储在Secrets里的内容是很安全的，只有仓库所有者和协作者有权使用，但也仅限于使用，没有人可以查看其内容。**
 
 ![image-20210730110052838](newpost-18/image-20210730110052838.png)
 
@@ -119,7 +120,7 @@ jobs:
 
 进入仓库-Settings-Secrets-New secret，分别新建两条名为`TCLOUD_API_ID`和`TCLOUD_API_KEY`，值为腾讯云API秘钥`SecretId`与`SecretKey`的secret。
 
-* 存储在Secrets里的内容是很安全的，只有仓库所有者和协作者有权使用，但也仅限于使用，没有人可以查看其内容。
+**存储在Secrets里的内容是很安全的，只有仓库所有者和协作者有权使用，但也仅限于使用，没有人可以查看其内容。**
 
 ![image-20210730110052838](newpost-18/image-20210730110052838.png)
 
@@ -171,9 +172,7 @@ deploy:
 
 进入仓库-Settings-Secrets-New secret，新建一条名为`HEXO_DEPLOY_PRIVATE_KEY`，值为`Github私钥`的secret。
 
-* 存储在Secrets里的内容是很安全的，只有仓库所有者和协作者有权使用，但也仅限于使用，没有人可以查看其内容。
-
-* 存储在Secrets里的内容是很安全的，只有仓库所有者和协作者有权使用，但也仅限于使用，没有人可以查看其内容。
+**存储在Secrets里的内容是很安全的，只有仓库所有者和协作者有权使用，但也仅限于使用，没有人可以查看其内容。**
 
 ![image-20210730110052838](newpost-18/image-20210730110052838.png)
 
