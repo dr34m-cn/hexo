@@ -66,10 +66,10 @@ top: true
 # Miscellaneous
 baidu_analytics: ''
 google_analytics: ''
-favicon: /imgs/favicon.ico
+favicon: /assets/imgs/favicon.ico
 
 #你的头像url
-avatar: /imgs/a101858209e03d25.jpg
+avatar: /assets/img/a101858209e03d25.jpg
 # https://others-1252906577.costj.myqcloud.com/img/avatar.jpg
 #是否开启分享
 share_jia: false
