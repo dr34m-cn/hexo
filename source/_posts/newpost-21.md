@@ -26,14 +26,6 @@ setenforce 0
 yum -y install epel-release
 ```
 
-### 3.下载docker-ce
-
-```sh
-yum install -y yum-utils device-mapper-persistent-data lvm2
-yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-yum -y install docker-ce docker-ce-cli containerd.io
-```
-
 ## master机器配置
 
 ### 1.安装etcd和kubernetes-master
@@ -63,7 +55,7 @@ KUBE_ADMISSION_CONTROL="--admission-control=NamespaceLifecycle,NamespaceExists,L
 KUBE_API_ARGS=""
 ```
 
-### 4.启动etcd、kube-apiserver、kube-controller-manager、kube-scheduler等服务，并设置开机启动。
+### 4.启动etcd、kube-apiserver、kube-controller-manager、kube-scheduler服务，并设置开机启动
 
 ```sh
 for SERVICES in etcd kube-apiserver kube-controller-manager kube-scheduler; do systemctl restart $SERVICES;systemctl enable $SERVICES;systemctl status $SERVICES ; done
@@ -117,7 +109,7 @@ KUBELET_ARGS=""
 * 其中`192.168.0.89`改为你真实master机器ip
 * 其中`192.168.0.80`改为当前node自己的ip
 
-### 5.在所有Node节点上启动kube-proxy,kubelet,docker,flanneld等服务，并设置开机启动。
+### 5.在所有Node节点上启动kube-proxy,kubelet,docker,flanneld服务，并设置开机启动
 
 ```sh
 for SERVICES in kube-proxy kubelet docker flanneld;do systemctl restart $SERVICES;systemctl enable $SERVICES;systemctl status $SERVICES; done
