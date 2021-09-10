@@ -6,11 +6,17 @@ tags: 运维
 
 ## 准备机器
 
-准备机器，本次以虚拟机示范，实际应用中如果使用虚拟机，可以先创建一台，然后完成master和node都需要的配置之后，再克隆出多台。本次演示的机器ip分别为：master：192.168.0.89；node1：192.168.0.90；node2：192.168.0.91；node3：192.168.0.92；node4：192.168.0.93；
-
-系统都是CentOS7，以root用户的登录
+准备机器，本次以虚拟机示范，系统都是CentOS7，以root用户的登录，实际应用中如果使用虚拟机，可以先创建一台，然后完成master和node都需要的配置之后，再克隆出多台。本次演示的机器ip分别为：
 
 <!--more-->
+
+| 机器   | IP           |
+| ------ | ------------ |
+| master | 192.168.0.89 |
+| node1  | 192.168.0.90 |
+| node2  | 192.168.0.91 |
+| node3  | 192.168.0.92 |
+| node4  | 192.168.0.93 |
 
 ## 所有机器配置
 
@@ -102,14 +108,14 @@ KUBE_MASTER="--master=http://192.168.0.89:8080"
 ```ini
 KUBELET_ADDRESS="--address=0.0.0.0"
 KUBELET_PORT="--port=10250"
-KUBELET_HOSTNAME="--hostname-override=192.168.0.80"
+KUBELET_HOSTNAME="--hostname-override=192.168.0.90"
 KUBELET_API_SERVER="--api-servers=http://192.168.0.89:8080" #指定Master节点的API Server
 KUBELET_POD_INFRA_CONTAINER="--pod-infra-container-image=registry.access.redhat.com/rhel7/pod-infrastructure:latest"
 KUBELET_ARGS=""
 ```
 
 * 其中`192.168.0.89`改为你真实master机器ip
-* 其中`192.168.0.80`改为当前node自己的ip
+* 其中`192.168.0.90`改为当前node自己的ip
 
 ### 5.在所有Node节点上启动kube-proxy,kubelet,docker,flanneld服务，并设置开机启动
 
