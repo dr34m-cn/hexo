@@ -4,7 +4,7 @@ date: 2021-09-10 16:23:23
 tags: 运维
 ---
 
-**基于centos7，root登录**
+**基于centos7，root登录**，笔记为[黑马程序员Docker容器化技术，从零学会Docker教程](https://www.bilibili.com/video/BV1CJ411T7BK?p=1)学习笔记
 
 ## 一、安装docker-ce并配置自启动
 
