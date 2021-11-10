@@ -10,11 +10,11 @@ tags: 运维
 rpm -qa | grep java
 ```
 
+<!--more-->
+
 如果没有安装java不会有任何返回，如下图
 
 ![image-20211109172218407](newpost-24/image-20211109172218407.png)
-
-<!--more-->
 
 ### 二、下载JDK并解压
 

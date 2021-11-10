@@ -8,6 +8,8 @@ tags: 运维
 
 [下载地址](https://zookeeper.apache.org/releases.html)
 
+<!--more-->
+
 ```shell
 mkdir /usr/local/zookeeper
 cd /usr/local/zookeeper
@@ -15,8 +17,6 @@ wget https://dlcdn.apache.org/zookeeper/zookeeper-3.7.0/apache-zookeeper-3.7.0-b
 tar -zxvf apache-zookeeper-3.7.0-bin.tar.gz
 mv apache-zookeeper-3.7.0-bin apache-zookeeper-3.7.0
 ```
-
-<!--more-->
 
 ### 二、修改配置文件
 
