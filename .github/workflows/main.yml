@@ -50,7 +50,7 @@ jobs:
         coscmd upload -rfs --delete ./public/ /
         tccli cdn PurgePathCache --cli-unfold-argument --Paths https://blog.ctftools.com/ --FlushType flush
 
-    - name: 配置Github部署私钥
+    - name: 配置Git部署私钥
       env:
         HEXO_DEPLOY_PRIVATE_KEY: ${{ secrets.HEXO_DEPLOY_PRIVATE_KEY }}
       run: |
@@ -65,7 +65,7 @@ jobs:
         git config --global user.name 'dr34-m'
         git config --global user.email '1416814478@qq.com'
 
-    - name: 部署Hexo到Github
+    - name: 部署Hexo到Github & Gitee
       run: hexo deploy
 
     - name: 打包压缩
