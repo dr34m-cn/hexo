@@ -96,9 +96,9 @@ jsonContent:
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-- type: git
-  repo: git@github.com:dr34-m/dr34-m.github.io.git
-  branch: master
-- type: git
-  repo: git@gitee.com:dr34m/dr34m.git
-  branch: master
+  - type: git
+    repo: git@gitee.com:dr34m/dr34m.git
+    branch: master
+  - type: git
+    repo: git@gitee.com:dr34m/dr34m.git
+    branch: master
