@@ -4,4 +4,4 @@
 
 博客地址 [https://dr34-m.github.io](https://dr34-m.github.io)
 
-国内镜像 [https://dr34m.gitee.io](https://dr34m.gitee.io)
+国内镜像 [https://dr34m.gitee.io](https://dr34m.gitee.io) or [https://blog.ctftools.com](https://blog.ctftools.com)
