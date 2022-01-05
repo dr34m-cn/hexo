@@ -151,6 +151,8 @@ source /etc/profile
 
 # 二、开始
 
+## (一)、安装配置
+
 ### 1. 安装hadoop
 
 复制安装包(本文用的是视频里的安装包)到node1的/export/server/目录下，解压并删除压缩包
@@ -406,6 +408,20 @@ start-yarn.sh
 
 日志目录**/export/server/hadoop-3.3.0/logs/**
 
+启动成功后
+
+* node1
+
+  ![image-20220105162852233](newpost-28/image-20220105162852233.png)
+
+* node2
+
+  ![image-20220105162910437](newpost-28/image-20220105162910437.png)
+
+* node3
+
+  ![image-20220105162922061](newpost-28/image-20220105162922061.png)
+
 Web  UI页面
 
 - HDFS集群：http://node1:9870/
@@ -460,4 +476,124 @@ start-yarn.sh
 ```
 
 ![image-20220105162039073](newpost-28/image-20220105162039073.png)
+
+## (二)、使用
+
+### MapReduce体验
+
+计算圆周率
+
+```sh
+cd /export/server/hadoop-3.3.0/share/hadoop/mapreduce/
+hadoop jar hadoop-mapreduce-examples-3.3.0.jar pi 2 2
+```
+
+### HDFS常用命令
+
+#### 1. 创建文件夹
+
+**hadoop fs -mkdir [-p] &#60;path&#62;  ... **
+
+path 为待创建的目录
+
+-p选项的行为与Unix mkdir -p非常相似，它会沿着路径创建父目录
+
+```sh
+hadoop fs -mkdir /ifnxs
+```
+
+#### 2. 查看指定目录下内容
+
+**hadoop fs -ls [-h] [-R] [&#60;path&#62; ...]**
+
+path 指定目录路径
+
+-h 人性化显示文件size
+
+-R 递归查看指定目录及其子目录
+
+```sh
+hadoop fs -ls -h /
+```
+
+#### 3. 上传文件到HDFS指定目录下
+
+**hadoop fs -put [-f] [-p]  &#60;localsrc&#62; ... &#60;dst&#62;**
+
+-f 覆盖目标文件（已存在下）
+
+-p 保留访问和修改时间，所有权和权限
+
+localsrc 本地文件系统（客户端所在机器）
+
+dst 目标文件系统（HDFS）
+
+```sh
+echo 1 > 1.txt
+hadoop fs -put 1.txt /ifnxs
+```
+
+#### 4. 查看HDFS文件内容
+
+**hadoop fs -cat  &#60;src&#62;  ...**
+
+读取指定文件全部内容，显示在标准输出控制台
+
+注意：对于大文件内容读取，慎重
+
+```sh
+hadoop fs -cat /ifnxs/1.txt
+```
+
+#### 5. 下载HDFS文件
+
+**hadoop fs -get [-f] [-p]   &#60;src&#62; ... &#60;localdst&#62;**
+
+下载文件到本地文件系统指定目录，localdst必须是目录
+
+-f 覆盖目标文件（已存在下）
+
+-p 保留访问和修改时间，所有权和权限
+
+```sh
+hadoop fs -get /ifnxs/1.txt ./2.txt
+```
+
+#### 6. 拷贝HDFS文件
+
+**hadoop fs -cp [-f] &#60;src&#62; ... &#60;dst&#62; **
+
+-f 覆盖目标文件（已存在下）
+
+```sh
+hadoop fs -cp /ifnxs/1.txt /ifnxs/3.txt
+```
+
+#### 7. 追加数据到HDFS文件中
+
+**hadoop fs -appendToFile  &#60;localsrc&#62; ... &#60;dst&#62;**
+
+将所有给定本地文件的内容追加到给定dst文件
+
+dst如果文件不存在，将创建该文件
+
+如果&#60;localSrc&#62;为-，则输入为从标准输入中读取
+
+```sh
+hadoop fs -appendToFile 1.txt 2.txt /ifnxs/1.txt
+```
+
+#### 8. HDFS数据移动操作
+
+**hadoop fs -mv &#60;src&#62; ... &#60;dst&#62; **
+
+移动文件到指定文件夹下
+
+可以使用该命令移动数据，重命名文件的名称
+
+```sh
+hadoop fs -mv /ifnxs/1.txt /ifnxs/333.txt
+```
+
+[其他命令](https://hadoop.apache.org/docs/r3.3.0/hadoop-project-dist/hadoop-common/FileSystemShell.html)
 
