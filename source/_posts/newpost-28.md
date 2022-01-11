@@ -1,7 +1,7 @@
 ---
 title: hadoop学习笔记
 date: 2022-01-05 10:52:51
-tags: 运维
+tags: [大数据,运维]
 toc: true
 ---
 
