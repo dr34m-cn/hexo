@@ -11,6 +11,10 @@ toc: true
 
 <!--more-->
 
+# 框架设计
+
+![datax_framework_new](newpost-30/ec7e36f4-6927-11e6-8f5f-ffc43d6a468b.png)
+
 # 实现
 
  ## 一、环境准备
@@ -258,6 +262,8 @@ python bin/datax.py job/oracle2stream.json
 
 ![image-20220111103428848](newpost-30/image-20220111103428848.png)
 
+扩展：这里的【table】可以写多个表结构相同的表名，最后写入HDFS也会写入多个文件
+
 ### 4. 写入HDFS
 
 在HDFS新建目录`datax`，用于接收数据，参考[HDFS写-文档](https://github.com/alibaba/DataX/blob/master/hdfswriter/doc/hdfswriter.md)继续编辑上边的json文本如下
@@ -399,9 +405,9 @@ python bin/datax.py job/oracle2hdfs.json
 }
 ```
 
-* 这里有一个坑，在Oracle**读取**时，jdbcUrl参数是个**数组**，Oracle**写入**时就是**字符串**了，如果还写数组，就会报下边的错
+* 这里有一个细节，在Oracle**读取**时，jdbcUrl参数是个**数组**，Oracle**写入**时就是**字符串**了，如果还写数组，就会报下边的错
 
-  `java.sql.SQLException: No suitable driver found for ["jdbc:oracle:thin:@localhost:1521:orcl"]]`
+	`java.sql.SQLException: No suitable driver found for ["jdbc:oracle:thin:@localhost:1521:orcl"]]`
 
 把上边的文本写入【/export/software/datax/job/hdfs2oracle.json】文件中，然后
 
@@ -409,3 +415,4 @@ python bin/datax.py job/oracle2hdfs.json
 cd /export/software/datax/
 python bin/datax.py job/hdfs2oracle.json
 ```
+
