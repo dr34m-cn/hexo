@@ -403,6 +403,12 @@ beeline> 直接回车
 
     * ![image-20220113104838039](newpost-29/image-20220113104838039.png)
 
+  * 从select创建表
+
+    ```sql
+    create table xxx as select id,name from ifnxs.t_user;
+    ```
+
 * 查看表结构
 
   ```sql
