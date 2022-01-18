@@ -19,7 +19,7 @@ tags: [编程,前端]
 
 ### 预览
 
-点击左边的相册，或者[点此链接](https://blog.ctftools.com/photos)
+点击左边的相册，或者[点此链接](/photos)
 
 ### 下载
 
@@ -29,6 +29,6 @@ tags: [编程,前端]
 
 略缩图可下载这个软件批量生成
 
-链接: https://pan.baidu.com/s/1slULnUd 密码: 54je
+链接: [https://pan.baidu.com/s/1slULnUd](https://pan.baidu.com/s/1slULnUd) 密码: 54je
 
 推荐略缩图尺寸328x328

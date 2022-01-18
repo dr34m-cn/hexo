@@ -38,7 +38,7 @@ tags: [运维,经验]
 
 ## 二、Github操作
 
-* 首先有个仓库用来存储静态网页数据，也可存储类似于hexo源码之类的通过actions自动部署(参考[Hexo + Github Actions 实现提交代码自动部署并通过FTP传到云服务器](https://blog.ctftools.com/2021/07/newpost-18/))，此步不详解。
+* 首先有个仓库用来存储静态网页数据，也可存储类似于hexo源码之类的通过actions自动部署(参考[Hexo + Github Actions 实现提交代码自动部署并通过FTP传到云服务器](/2021/07/newpost-18/))，此步不详解。
 
 * 进入仓库-Settings-Secrets-New secret，分别新建两条名为`TCLOUD_API_ID`和`TCLOUD_API_KEY`，值为上边获取到的API秘钥`SecretId`与`SecretKey`，存储在Secrets里的内容是很安全的，只有仓库所有者和协作者有权使用，但也仅限于使用，没有人可以查看其内容。
 

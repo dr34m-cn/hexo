@@ -11,9 +11,9 @@ toc: true
 
 <!--more-->
 
-**本文要求已经对Hexo有一点了解，并且知道怎么把hexo源码放到github，如果您刚接触Hexo，可以参考[Hexo安装配置并托管至github](https://blog.ctftools.com/2017/12/post233/)**
+**本文要求已经对Hexo有一点了解，并且知道怎么把hexo源码放到github，如果您刚接触Hexo，可以参考[Hexo安装配置并托管至github](/2017/12/post233/)**
 
-**如果不想依赖github，可以参考这套自建方案[centos下hexo + svn + jenkins实现博客自动部署](https://blog.ctftools.com/2020/11/post249/)、[svn提交后jenkins自动部署](https://blog.ctftools.com/2020/11/newpost-1/)**
+**如果不想依赖github，可以参考这套自建方案[centos下hexo + svn + jenkins实现博客自动部署](/2020/11/post249/)、[svn提交后jenkins自动部署](/2020/11/newpost-1/)**
 
 # 实现过程
 
@@ -172,7 +172,7 @@ jobs:
         coscmd upload -rfs --delete ./public/ /
 ```
 
-更详细的教程，包括腾讯云相关配置可以参考[通过Github Actions部署静态网站到腾讯云COS，并自动刷新CDN](https://blog.ctftools.com/2021/07/newpost-20/)。提交后就会自动部署，去COS查看效果吧。
+更详细的教程，包括腾讯云相关配置可以参考[通过Github Actions部署静态网站到腾讯云COS，并自动刷新CDN](/2021/07/newpost-20/)。提交后就会自动部署，去COS查看效果吧。
 
 ### 3.3 发布到 github-pages
 
@@ -185,7 +185,7 @@ deploy:
  branch: master
 ```
 
-如果没有，可以参考[Hexo安装配置并托管至github](https://blog.ctftools.com/2017/12/post233/)
+如果没有，可以参考[Hexo安装配置并托管至github](/2017/12/post233/)
 
 进入仓库-Settings-Secrets-New secret，新建一条名为`HEXO_DEPLOY_PRIVATE_KEY`，值为`Github私钥`的secret。
 

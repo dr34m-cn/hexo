@@ -8,7 +8,7 @@ tags: [运维,持续集成]
 
 <!--more-->
 
-### 如果希望通过github的actions来实现，可以参考[Hexo + Github Actions 实现提交代码自动部署并通过FTP传到云服务器](https://blog.ctftools.com/2021/07/newpost-18/)
+### 如果希望通过github的actions来实现，可以参考[Hexo + Github Actions 实现提交代码自动部署并通过FTP传到云服务器](/2021/07/newpost-18/)
 
 ## 一、前提
 
