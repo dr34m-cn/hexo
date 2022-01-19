@@ -2,6 +2,7 @@
 title: 用idea开发spring项目过程中热重启
 date: 2021-11-05 15:15:30
 tags: Java
+index_img: /assets/headImg/idea.png
 ---
 
 ## 一、目标

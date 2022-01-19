@@ -2,6 +2,7 @@
 title: element-ui 自带事件添加自定义参数
 date: 2021-12-20 14:59:33
 tags: 前端
+index_img: /assets/headImg/elementui.png
 ---
 
 ## 目的

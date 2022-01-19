@@ -3,6 +3,7 @@ title: hadoop学习笔记
 date: 2022-01-05 10:52:51
 tags: [大数据,运维]
 toc: true
+index_img: /assets/headImg/hadoop.png
 ---
 
 本文基于B站视频教程[2022最新黑马程序员大数据Hadoop入门视频教程，最适合零基础自学的大数据Hadoop教程](https://www.bilibili.com/video/BV1CU4y1N7Sh)，p19-p50，本文软件版本，行文顺序等可能与视频略有不同

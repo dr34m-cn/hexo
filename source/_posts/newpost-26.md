@@ -2,6 +2,7 @@
 title: windows 11安装安卓应用程序
 date: 2021-12-07 10:35:21
 tags: 经验
+index_img: /assets/headImg/win&and.png
 ---
 
 ## 一、目的

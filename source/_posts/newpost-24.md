@@ -2,6 +2,7 @@
 title: centos7安装jdk8
 date: 2021-11-09 17:18:06
 tags: 运维
+index_img: /assets/headImg/jdk.png
 ---
 
 ### 一、检查是否已安装

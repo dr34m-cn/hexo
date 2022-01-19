@@ -3,6 +3,7 @@ title: windows本地配置spark开发环境
 date: 2022-01-18 09:52:21
 tags: [大数据,运维]
 toc: true
+index_img: /assets/headImg/spark.png
 ---
 
 # 目标

@@ -2,6 +2,7 @@
 title: centos7安装zookeeper
 date: 2021-11-09 17:38:53
 tags: 运维
+index_img: /assets/headImg/zookeeper.png
 ---
 
 ### 一、下载并解压

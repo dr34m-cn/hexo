@@ -3,6 +3,7 @@ title: dataX使用
 date: 2022-01-10 16:00:10
 tags: [大数据,运维]
 toc: true
+index_img: /assets/headImg/datax.png
 ---
 
 # 目标
