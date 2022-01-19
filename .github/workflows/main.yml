@@ -65,7 +65,7 @@ jobs:
         git config --global user.name 'dr34-m'
         git config --global user.email '1416814478@qq.com'
 
-    - name: 部署Hexo到Github & Gitee
+    - name: 部署Hexo到Git
       run: hexo deploy
 
     - name: 打包压缩
