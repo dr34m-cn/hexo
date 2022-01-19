@@ -403,7 +403,7 @@ footer:
     <div style="font-size: 0.85rem">
       <span id="timeDate">载入天数...</span>
       <span id="times">载入时分秒...</span>
-      <script src="/js/duration.js"></script>
+      <script src="/assets/js/foot.js"></script>
     </div>
   '
 
@@ -598,7 +598,7 @@ post:
   # Copyright, will be displayed at the end of each post
   copyright:
     enable: true
-    content: '本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！'
+    content: '本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh" rel="nofollow noopener">CC BY-NC 4.0 协议</a> ，转载请注明出处！'
 
   # 文章底部上一篇下一篇功能
   # Link to previous/next post
