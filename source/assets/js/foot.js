@@ -4,6 +4,12 @@
     var date = new Date();
     var nowYear = date.getFullYear();
     document.getElementById("nowYear").innerHTML = nowYear;
+    setTimeout(function() {
+        var beian = document.getElementsByClassName("beian");
+        if (beian && JSON.stringify(beian) != '{}' && window.location.host != 'blog.ctftools.com') {
+            beian[0].style.display = 'none';
+        }
+    }, 500)
 
     function update() {
         var now = new Date();
