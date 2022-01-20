@@ -200,6 +200,8 @@ cp /export/server/hadoop-3.3.0/share/hadoop/common/lib/guava-27.0-jre.jar ./lib/
 
   编辑如下
 
+<details>
+<summary>点击展开配置内容</summary>
   ```xml
   <configuration>
   <!-- 存储元数据mysql相关配置 -->
@@ -242,6 +244,7 @@ cp /export/server/hadoop-3.3.0/share/hadoop/common/lib/guava-27.0-jre.jar ./lib/
   </property>
   </configuration>
   ```
+</details>
 
 ### 2.3 上传驱动
 
