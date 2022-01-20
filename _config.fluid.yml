@@ -903,8 +903,8 @@ page:
 #---------------------------
 page404:
   enable: true
-  banner_img: /img/default.png
-  banner_img_height: 85
+  banner_img: /assets/img/g8xjqe.png
+  banner_img_height: 80
   banner_mask_alpha: 0.3
   subtitle: "Page not found"
 

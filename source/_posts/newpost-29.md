@@ -122,23 +122,23 @@ systemctl enable mysqld
 CentOS7 干净卸载MySQL 5.7
 
 ```shell
-#关闭mysql服务
+# 关闭mysql服务
 systemctl stop mysqld.service
 
-#查找安装mysql的rpm包
+# 查找安装mysql的rpm包
 [root@node3 ~]# rpm -qa | grep -i mysql    
 mysql-community-libs-5.7.29-1.el7.x86_64
 mysql-community-common-5.7.29-1.el7.x86_64
 mysql-community-client-5.7.29-1.el7.x86_64
 mysql-community-server-5.7.29-1.el7.x86_64
 
-#卸载
+# 卸载
 [root@node3 ~]# yum remove mysql-community-libs-5.7.29-1.el7.x86_64 mysql-community-common-5.7.29-1.el7.x86_64 mysql-community-client-5.7.29-1.el7.x86_64 mysql-community-server-5.7.29-1.el7.x86_64
 
-#查看是否卸载干净
+# 查看是否卸载干净
 rpm -qa | grep -i mysql
 
-#查找mysql相关目录 删除
+# 查找mysql相关目录 删除
 [root@node1 ~]# find / -name mysql
 /var/lib/mysql
 /var/lib/mysql/mysql
@@ -148,7 +148,7 @@ rpm -qa | grep -i mysql
 [root@node1 ~]# rm -rf /var/lib/mysql/mysql
 [root@node1 ~]# rm -rf /usr/share/mysql
 
-#删除默认配置 日志
+# 删除默认配置 日志
 rm -rf /etc/my.cnf
 rm -rf /var/log/mysqld.log
 ```
@@ -209,34 +209,34 @@ cp /export/server/hadoop-3.3.0/share/hadoop/common/lib/guava-27.0-jre.jar ./lib/
   	<name>javax.jdo.option.ConnectionURL</name>
   	<value>jdbc:mysql://node1:3306/hive3?createDatabaseIfNotExist=true&amp;useSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF-8</value>
   </property>
-  
+
   <property>
   	<name>javax.jdo.option.ConnectionDriverName</name>
   	<value>com.mysql.jdbc.Driver</value>
   </property>
-  
+
   <property>
   	<name>javax.jdo.option.ConnectionUserName</name>
   	<value>root</value>
   </property>
-  
+
   <property>
   	<name>javax.jdo.option.ConnectionPassword</name>
   	<value>hadoop</value>
   </property>
-  
+
   <!-- H2S运行绑定host -->
   <property>
       <name>hive.server2.thrift.bind.host</name>
       <value>node1</value>
   </property>
-  
+
   <!-- 远程模式部署metastore metastore地址 -->
   <property>
       <name>hive.metastore.uris</name>
       <value>thrift://node1:9083</value>
   </property>
-  
+
   <!-- 关闭元数据存储授权  --> 
   <property>
       <name>hive.metastore.event.db.notification.api.auth</name>
@@ -258,7 +258,7 @@ cp /export/server/hadoop-3.3.0/share/hadoop/common/lib/guava-27.0-jre.jar ./lib/
 cd /export/server/apache-hive-3.1.2-bin/
 bin/schematool -initSchema -dbType mysql -verbos
 #初始化成功会在mysql中创建74张表
-```
+  ```
 
 ![image-20220112165243736](newpost-29/image-20220112165243736.png)
 
