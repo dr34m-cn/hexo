@@ -48,13 +48,13 @@ CentOS7 x64自带Python2环境，不需要额外安装，查看Python版本：`p
 
 #### 2.2 安装
 
-```sh
+```shell
 mkdir -p /export/server
 ```
 
 把下载的jdk上传到该目录，然后解压
 
-```sh
+```shell
 cd /export/server/
 tar -zxvf jdk-8u311-linux-x64.tar.gz
 rm -f jdk-8u311-linux-x64.tar.gz # 可以不删
@@ -69,7 +69,7 @@ vim /etc/profile
 
 结尾追加
 
-```sh
+```shell
 export JAVA_HOME=/export/server/jdk1.8.0_311
 export PATH=$PATH:$JAVA_HOME/bin
 export CALSSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
@@ -83,7 +83,7 @@ source /etc/profile
 
 查看JDK版本
 
-```sh
+```shell
 java -version
 ```
 
@@ -91,7 +91,7 @@ java -version
 
 ### 1. 下载安装
 
-```sh
+```shell
 yum -y install wget # 如果已经有了就不用了
 mkdir -p /export/software
 cd /export/software/
@@ -103,7 +103,7 @@ rm -f datax.tar.gz # 可以不删
 
 ### 2. 测试
 
-```sh
+```shell
 cd /export/software/datax/
 python bin/datax.py job/job.json
 ```
@@ -154,7 +154,7 @@ dataX支持数据如下图（来自[官方](https://github.com/alibaba/DataX#sup
 
 例如想要实现Oracle->HDFS，获取模板命令如下：
 
-```sh
+```shell
 cd /export/software/datax/bin/
 python datax.py -r oraclereader -w hdfswriter
 ```
@@ -254,7 +254,7 @@ python datax.py -r oraclereader -w hdfswriter
 
 把上边的文本写入【/export/software/datax/job/oracle2stream.json】文件中，然后
 
-```sh
+```shell
 cd /export/software/datax/
 python bin/datax.py job/oracle2stream.json
 ```
@@ -330,7 +330,7 @@ python bin/datax.py job/oracle2stream.json
 
 把上边的文本写入【/export/software/datax/job/oracle2hdfs.json】文件中，然后
 
-```sh
+```shell
 cd /export/software/datax/
 python bin/datax.py job/oracle2hdfs.json
 ```
@@ -412,7 +412,7 @@ python bin/datax.py job/oracle2hdfs.json
 
 把上边的文本写入【/export/software/datax/job/hdfs2oracle.json】文件中，然后
 
-```sh
+```shell
 cd /export/software/datax/
 python bin/datax.py job/hdfs2oracle.json
 ```
