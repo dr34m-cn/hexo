@@ -2,6 +2,7 @@
 title: 用Typora编写Hexo博客时图片的处理
 date: 2021-07-28 17:44:03
 tags: 经验
+index_img: /assets/headImg/typora.png
 ---
 
 ## 目标

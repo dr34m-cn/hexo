@@ -2,7 +2,7 @@
 title: Hexo + Github Actions 提交代码自动部署 云服务器 腾讯云COS github-pages
 date: 2021-07-23 17:41:16
 tags: [运维,经验]
-toc: true
+index_img: /assets/headImg/hexo&github.png
 ---
 
 # 最终成果

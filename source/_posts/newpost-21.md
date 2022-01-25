@@ -2,6 +2,7 @@
 title: CentOS7安装k8s集群
 date: 2021-09-09 16:23:11
 tags: 运维
+index_img: /assets/headImg/k8s.png
 ---
 
 ## 准备机器

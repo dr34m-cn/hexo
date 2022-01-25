@@ -2,6 +2,7 @@
 title: 通过Github Actions部署静态网站到腾讯云COS，并自动刷新CDN
 date: 2021-07-30 10:14:06
 tags: [运维,经验]
+index_img: /assets/headImg/actions.png
 ---
 
 ## 一、腾讯云操作
