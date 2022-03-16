@@ -396,16 +396,16 @@ beeline> 直接回车
 
   * 例
 
-    * ```sql
-      create table ifnxs.t_user (
-          id int comment "编号",
-          name string comment "姓名"
-      ) comment "用户表"
-      row format delimited
-      fields terminated by "\t"; -- 字段之间的分隔符
-      ```
+    ```sql
+    create table ifnxs.t_user (
+        id int comment "编号",
+        name string comment "姓名"
+    ) comment "用户表"
+    row format delimited
+    fields terminated by "\t"; -- 字段之间的分隔符
+    ```
 
-    * ![image-20220113104838039](newpost-29/image-20220113104838039.png)
+    ![image-20220113104838039](newpost-29/image-20220113104838039.png)
 
   * 从select创建表
 
