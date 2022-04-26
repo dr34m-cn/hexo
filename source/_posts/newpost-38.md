@@ -1,7 +1,7 @@
 ---
 title: python归一化数据
 date: 2022-03-31 20:08:58
-tags: [Python, 机器学习]
+tags: [Python, 机器学习, TensorFlow]
 index_img: /assets/headImg/tensorflow.png
 ---
 
