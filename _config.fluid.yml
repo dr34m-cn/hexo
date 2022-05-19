@@ -39,6 +39,12 @@ code:
   # Enable copy code button
   copy_btn: true
 
+  # 代码语言
+  # Code language
+  language:
+    enable: true
+    default: "TEXT"
+
   # 代码高亮
   # Code highlight
   highlight:
@@ -59,10 +65,6 @@ code:
       # See: https://highlightjs.org/static/demo/
       style: "Github Gist"
       style_dark: "dark"
-
-      # 是否根据 style 改变代码背景色（如果 style 是深色背景别忘了开启此项）
-      # If true, the code background will change color based on the style (If style has a dark background, don't forget to true)
-      bg_color: true
 
     prismjs:
       # 在下方链接页面右侧的圆形按钮挑选 style 填入，也可以直接填入 css 链接
@@ -94,6 +96,11 @@ fun_features:
     # 是否循环播放效果
     # If true, loop animation
     loop: false
+
+    # 在指定页面开启，不填则在所有页面开启
+    # Enable in specified page, all pages by default
+    # Options: home | post | tag | category | about | links | page | 404
+    scope: []
 
   # 为文章内容中的标题添加锚图标
   # Add an anchor icon to the title on the post page
@@ -191,6 +198,15 @@ color:
   scrollbar_color_dark: "#687582"
   scrollbar_hover_color: "#a6a6a6"
   scrollbar_hover_color_dark: "#9da8b3"
+
+  # 按钮背景色
+  # Color of button
+  button_bg_color: "transparent"
+  button_bg_color_dark: "transparent"
+  # 按钮悬浮背景色
+  # Color of button when hovering
+  button_hover_bg_color: "#f2f3f5"
+  button_hover_bg_color_dark: "#46647e"
 
 # 主题字体配置
 # Font
