@@ -1015,44 +1015,42 @@ static_prefix:
   internal_css: /css
   internal_img: /img
 
-  anchor: https://cdn.jsdelivr.net/npm/anchor-js@4/
+  anchor: https://lib.baomitu.com/anchor-js/4.3.1/
 
-  github_markdown: https://cdn.jsdelivr.net/npm/github-markdown-css@4/
+  github_markdown: https://lib.baomitu.com/github-markdown-css/4.0.0/
 
-  jquery: https://cdn.jsdelivr.net/npm/jquery@3/dist/
+  jquery: https://lib.baomitu.com/jquery/3.6.0/
 
-  bootstrap: https://cdn.jsdelivr.net/npm/bootstrap@4/dist/
+  bootstrap: https://lib.baomitu.com/twitter-bootstrap/4.6.1/
 
-  highlightjs: https://cdn.jsdelivr.net/npm/highlight.js@10/
+  prismjs: https://lib.baomitu.com/prism/1.27.0/
 
-  prismjs: https://cdn.jsdelivr.net/npm/prismjs@1/
+  tocbot: https://lib.baomitu.com/tocbot/4.18.2/
 
-  tocbot: https://cdn.jsdelivr.net/npm/tocbot@4/dist/
+  typed: https://lib.baomitu.com/typed.js/2.0.12/
 
-  typed: https://cdn.jsdelivr.net/npm/typed.js@2/lib/
+  fancybox: https://lib.baomitu.com/fancybox/3.5.7/
 
-  fancybox: https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/
+  nprogress: https://lib.baomitu.com/nprogress/0.2.0/
 
-  nprogress: https://cdn.jsdelivr.net/npm/nprogress@0/
+  mathjax: https://lib.baomitu.com/mathjax/3.2.1/
 
-  mathjax: https://cdn.jsdelivr.net/npm/mathjax@3/es5/
-
-  katex: https://cdn.jsdelivr.net/npm/katex@0/dist/
+  katex: https://lib.baomitu.com/KaTeX/0.15.6/
 
   busuanzi: https://busuanzi.ibruce.info/busuanzi/2.3/
 
-  clipboard: https://cdn.jsdelivr.net/npm/clipboard@2/dist/
+  clipboard: https://lib.baomitu.com/clipboard.js/2.0.10/
 
-  mermaid: https://cdn.jsdelivr.net/npm/mermaid@8/dist/
+  mermaid: https://lib.baomitu.com/mermaid/8.14.0/
 
-  valine: https://cdn.jsdelivr.net/npm/valine@1/dist/
+  valine: https://lib.baomitu.com/valine/1.4.18/
 
-  waline: https://cdn.jsdelivr.net/npm/@waline/client@1/dist/
+  waline: https://lib.baomitu.com/waline/2.5.1/
 
-  gitalk: https://cdn.jsdelivr.net/npm/gitalk@1/dist/
+  gitalk: https://lib.baomitu.com/gitalk/1.7.2/
 
-  disqusjs: https://cdn.jsdelivr.net/npm/disqusjs@1/dist/
+  disqusjs: https://lib.baomitu.com/disqusjs/1.3.0/
 
-  twikoo: https://cdn.jsdelivr.net/npm/twikoo@1/dist/
+  twikoo: https://lib.baomitu.com/twikoo/1.5.11/
 
-  hint: https://cdn.jsdelivr.net/npm/hint.css@2/
+  hint: https://lib.baomitu.com/hint.css/2.7.0/
