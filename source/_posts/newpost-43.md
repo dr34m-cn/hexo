@@ -2,8 +2,7 @@
 title: 一个上手即用的通用公众号/小程序/h5/app框架
 date: 2022-06-10 18:50:03
 tags: [前端]
-index_img: 
-sticky:
+index_img: /assets/headImg/ui.png
 ---
 
 源码地址：[https://github.com/dr34-m/uniapp-demo](https://github.com/dr34-m/uniapp-demo)
