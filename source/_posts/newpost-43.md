@@ -7,15 +7,20 @@ index_img: /assets/headImg/ui.png
 
 源码地址：[https://github.com/dr34-m/uniapp-demo](https://github.com/dr34-m/uniapp-demo)
 
-本通用框架基于`uniapp`与`uView UI 2.0.31`，封装了日常开发中最常用的接口请求、数据中心、环境配置等操作，上手即用。
+框架后期或有更新，请以源码中`README.md`文档为准
 
+本通用框架基于`uniapp`与`uView UI 2.0.31`，封装了日常开发中最常用的接口请求、数据中心、环境配置等操作，上手即用。
+<!--more-->
 ## 1. 运维
 
 ### 1.1 构建
 
 ```shell
-# H5
-npm run build:h5
+# H5 生产
+npm run build
+
+# H5 dev
+npm run build:dev
 
 # 微信小程序
 npm run build:mp-weixin
@@ -47,11 +52,14 @@ npm run build:mp-weixin
 ### 2.1 启动
 
 ```shell
+# 安装依赖
 npm install
-npm run dev:h5
+
+# 运行
+npm run serve
 ```
 
-其他平台启动，例如快应用、支付宝小程序等详见[uniapp官方文档](https://uniapp.dcloud.net.cn/quickstart-cli.html#%E8%BF%90%E8%A1%8C%E3%80%81%E5%8F%91%E5%B8%83uni-app)
+其他平台运行，例如快应用、支付宝小程序等详见[uniapp官方文档](https://uniapp.dcloud.net.cn/quickstart-cli.html#%E8%BF%90%E8%A1%8C%E3%80%81%E5%8F%91%E5%B8%83uni-app)
 
 ### 2.2 说明
 
@@ -199,6 +207,4 @@ getMenu2(id).then(res => {
 })
 ```
 
-> 参考 [uView](https://www.uviewui.com/)
->
-> 参考 [uniapp](https://uniapp.dcloud.net.cn/)
+> 参考 [uView](https://www.uviewui.com/)、[uniapp](https://uniapp.dcloud.net.cn/)
