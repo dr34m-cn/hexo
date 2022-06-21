@@ -41,7 +41,6 @@ jobs:
         REGION: ap-shanghai
       run: |
         coscmd config -a $SECRET_ID -s $SECRET_KEY -b $BUCKET -r $REGION
-        echo '\ntimeout = 600' >> ~/.cos.conf
         tccli configure set secretId $SECRET_ID
         tccli configure set secretKey $SECRET_KEY
         tccli configure set region $REGION
