@@ -64,7 +64,7 @@ ipcMain.handle("terminal-create", (event) => {
 
 #### 封装处：`term.vue`
 
-```vue
+```html
 <template>
 	<div class="term" :id="'terminal' + id">
 	</div>
@@ -167,7 +167,7 @@ ipcMain.handle("terminal-create", (event) => {
 
 #### 调用处：`App.vue`
 
-```vue
+```html
 <template>
 	<div id="app">
 		<term :id="1" :showFlag="true" class="term"></term>
