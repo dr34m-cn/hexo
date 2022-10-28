@@ -67,7 +67,7 @@ static_prefix:
   mermaid: /assets/static/
 
   valine: /assets/static/
-  
+
   waline: /assets/static/
 
   gitalk: /assets/static/

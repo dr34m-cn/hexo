@@ -26,7 +26,7 @@ npm install --save v-clipboard
 ```js
 import Vue from 'vue'
 import Clipboard from 'v-clipboard'
- 
+
 Vue.use(Clipboard)
 ```
 
@@ -49,6 +49,3 @@ navigator.clipboard.readText().then((res) => {
     console.log('获取剪切板内容失败:', err);
 });
 ```
-
-
-

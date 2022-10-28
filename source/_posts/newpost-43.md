@@ -35,10 +35,10 @@ npm run build:mp-weixin
 
 ```js
 "h5" : {
-		"title" : "标题",
-		"router" : {
-				"base" : "/h5/"
-		}
+        "title" : "标题",
+        "router" : {
+                "base" : "/h5/"
+        }
 }
 ```
 
@@ -84,13 +84,13 @@ npm run serve
 
 ```js
 const store = new Vuex.Store({
-	state: {
-		vuex_token: lifeData.vuex_token ? lifeData.vuex_token : null,
-		vuex_tmp: null
-	},
-	
-	...
-	
+    state: {
+        vuex_token: lifeData.vuex_token ? lifeData.vuex_token : null,
+        vuex_tmp: null
+    },
+
+    ...
+
 })
 ```
 
@@ -105,13 +105,13 @@ let saveStateKeys = ['vuex_token'];
 ...
 
 const store = new Vuex.Store({
-	state: {
-		vuex_token: lifeData.vuex_token ? lifeData.vuex_token : null,
-		vuex_tmp: null
-	},
-	
-	...
-	
+    state: {
+        vuex_token: lifeData.vuex_token ? lifeData.vuex_token : null,
+        vuex_tmp: null
+    },
+
+    ...
+
 })
 ```
 
@@ -132,9 +132,9 @@ const store = new Vuex.Store({
 this.$u.vuex('vuex_token', "xxxxx");
 // 对象
 this.$u.vuex('vuex_token', {
-	id: 1,
-	key: 'token',
-	value: 'xxxxx'
+    id: 1,
+    key: 'token',
+    value: 'xxxxx'
 });
 ```
 
@@ -147,14 +147,16 @@ this.$u.vuex('vuex_token', {
 接口拦截器在`/src/utils/request.js`中，可以根据需要自行修改；
 
 对于请求：
+
 * 凡是不以`/login`开头，且当前已有`token`的（数据中心`vuex_token`字段值非`null`），将自动在请求头`header.token`存入已有的`token`值；
 
 对于响应：
+
 * 响应值`response.statusCode`非`200`的，将拦截，弹框提示并抛出异常，可在接口`catch`中捕获；
 * 响应数据存在`response.data.code`字段的，判断`code`值：
-	* 值为`401`将拦截并抛出异常，可在接口`catch`中捕获，建议在拦截器中统一处理；
-	* 值非`200`且非`401`将拦截，弹框提示并抛出异常，可在接口`catch`中捕获；
-	* 值为`200`的，将返回`response.data`，可在接口`then`中获取；
+  * 值为`401`将拦截并抛出异常，可在接口`catch`中捕获，建议在拦截器中统一处理；
+  * 值非`200`且非`401`将拦截，弹框提示并抛出异常，可在接口`catch`中捕获；
+  * 值为`200`的，将返回`response.data`，可在接口`then`中获取；
 * 响应数据不存在`response.data.code`字段的，将返回`response.data`，可在接口`then`中获取。
 
 ##### 2.2.3.2 api集中管理
@@ -162,6 +164,7 @@ this.$u.vuex('vuex_token', {
 提示：get请求第一个参数是配置，post请求第一个参数是请求值，第二个才是配置
 
 在`/src/api/`目录下新建`api.js`文件，内容如下
+
 ```js
 const http = uni.$u.http
 
@@ -176,10 +179,10 @@ export const getMenu3 = (params) => http.get('/ebapi/public_api/index', {params}
 
 // get请求（带header等配置）
 export const getMenu4 = (params) => http.get('/ebapi/public_api/index', {
-	params,
-	header: {
-		token: '1111'
-	}
+    params,
+    header: {
+        token: '1111'
+    }
 })
 
 // post请求
@@ -187,10 +190,10 @@ export const postMenu = (data) => http.post('/ebapi/public_api/index', data)
 
 // post请求（带header等）
 export const postMenu = (data) => http.post('/ebapi/public_api/index', data, {
-	header: {
-		token: '1111'
-	},
-	responseType: 'arraybuffer'
+    header: {
+        token: '1111'
+    },
+    responseType: 'arraybuffer'
 })
 
 // 更多请求使用
@@ -211,33 +214,33 @@ uni.$u.http.trace(url[, data[, config]])
 
 ```js
 import {
-	getMenu2,
-	getMenu3
+    getMenu2,
+    getMenu3
 } from '@/api/api.js';
 
 getMenu2(1).then(res => {
-	// 经过拦截器的处理，进入到这里的请求都是成功请求，无需考虑请求失败的情况
-	console.log('res',res)
+    // 经过拦截器的处理，进入到这里的请求都是成功请求，无需考虑请求失败的情况
+    console.log('res',res)
 }).catch(err=>{
-	// 多数情况下，不需要写catch，因为拦截器已经进行了弹窗提示等操作
-	// 但当页面需要对错误进行处理时（例如关闭加载动画，取消按钮loading等），就需要在catch中操作
-	console.log('err',err)
+    // 多数情况下，不需要写catch，因为拦截器已经进行了弹窗提示等操作
+    // 但当页面需要对错误进行处理时（例如关闭加载动画，取消按钮loading等），就需要在catch中操作
+    console.log('err',err)
 })
 
 getMenu3({
-	id: 1
+    id: 1
 }).then(
-	...
+    ...
 ).catch(
-	...
+    ...
 )
 
 postMenu({
-	id: 1
+    id: 1
 }).then(
-	...
+    ...
 ).catch(
-	...
+    ...
 )
 ```
 
@@ -250,27 +253,27 @@ postMenu({
 ```js
 // 0-男,1-女
 const sexFilter = (value) => {
-	let sexList = ['男', '女'];
-	return sexList[value] ? sexList[value] : "--";
+    let sexList = ['男', '女'];
+    return sexList[value] ? sexList[value] : "--";
 }
 
 // xx-小学及以下，cz-初中，gz-高中及以上
 const educationFilter = (value) => {
-	switch (value) {
-		case 'xx':
-			return '小学及以下';
-		case 'cz':
-			return '初中';
-		case 'gz':
-			return '高中及以上';
-		default:
-			return '--';
-	}
+    switch (value) {
+        case 'xx':
+            return '小学及以下';
+        case 'cz':
+            return '初中';
+        case 'gz':
+            return '高中及以上';
+        default:
+            return '--';
+    }
 }
 
 export default {
-	sexFilter,
-	educationFilter
+    sexFilter,
+    educationFilter
 }
 ```
 

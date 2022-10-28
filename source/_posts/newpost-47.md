@@ -31,15 +31,15 @@ const encoding = os.platform() == 'win32' ? 'cp936' : 'utf-8';
 const binaryEncoding = 'binary';
 // 执行命令并获取结果
 const runExec = (cmd) => {
-	return new Promise((resolve, reject) => {
-		exec(cmd, { encoding: binaryEncoding }, function(error, stdout, stderr) {
-			if (error) {
-				reject(iconv.decode(new Buffer(error.message, binaryEncoding), encoding));
-			} else {
-				resolve(iconv.decode(new Buffer(stdout, binaryEncoding), encoding));
-			}
-		});
-	})
+    return new Promise((resolve, reject) => {
+        exec(cmd, { encoding: binaryEncoding }, function(error, stdout, stderr) {
+            if (error) {
+                reject(iconv.decode(new Buffer(error.message, binaryEncoding), encoding));
+            } else {
+                resolve(iconv.decode(new Buffer(stdout, binaryEncoding), encoding));
+            }
+        });
+    })
 }
 export default runExec
 ```

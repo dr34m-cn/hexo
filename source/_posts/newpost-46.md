@@ -21,4 +21,3 @@ sudo yum install devtoolset-7-gcc*
 scl enable devtoolset-7 bash
 echo "source /opt/rh/devtoolset-7/enable" >>/etc/profile #添加这行长期使用
 ```
-
