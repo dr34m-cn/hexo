@@ -48,7 +48,7 @@ exit 0
 
 测试提交代码，如果可以看到提交代码的用户名已经打印到`/home/svn/project/hooks/user.txt`文件中，则说明成功。
 
-* 提示`post-commit hook failed (exit code 255) with no output`多半是没有赋予`post-commit`可执行权限，还有可能下边的原因。我之前没有复制`post-commit.tmpl`而是选择手动新建了`post-commit`文件，就一直报错，百撕不得骑姐，后来复制`post-commit.tmpl`就没问题了。
+* 提示`post-commit hook failed (exit code 255) with no output`多半是没有赋予`post-commit`可执行权限，还有可能下边的原因。我之前没有复制`post-commit.tmpl`而是选择手动新建了`post-commit`文件，就一直报错，后来复制`post-commit.tmpl`就没问题了。
 
 * 添加`source /etc/profile`的目的是为了确保jdk环境正常。
 
