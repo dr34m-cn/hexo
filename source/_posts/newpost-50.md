@@ -176,5 +176,3 @@ uncompyle6 -o main.py main.pyc
 ```
 
 > 参考1 [Python Uncompyle6 反编译工具使用 与 Magic Number 详解](https://blog.csdn.net/zheng__huang/article/details/112380221)
-> 
-> 参考2 
