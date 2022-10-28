@@ -11,11 +11,11 @@ index_img: /assets/headImg/python.png
 
 本次仅考虑无`-key`参数的打包
 
+<!--more-->
+
 # 环境
 
 待逆向文件`main.exe`，当前电脑已经安装`Python 3.7`环境
-
-<!--more-->
 
 # 实现
 

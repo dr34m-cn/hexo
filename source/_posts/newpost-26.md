@@ -21,8 +21,6 @@ index_img: /assets/headImg/win&and.png
 
 ![image-20211207104243956](newpost-26/image-20211207104243956.png)
 
-
-
 ### 3、安装Windows Subsystem for Android
 
 ##### 1.系统中搜索`启用或关闭 Windows 功能`并打开，勾选下图中的几个。如果发现没有这几个功能，就要先到BIOS/UEFI 开启「 Virtualization 」和「 Hyper-V 」相关的功能；
@@ -33,7 +31,7 @@ index_img: /assets/headImg/win&and.png
 
 ##### 3.[点这里](https://www.microsoft.com/en-us/p/windows-subsystem-for-android/9p3395vx91nr?activetab=pivot:overviewtab)跳转Microsoft Store 网页版，在弹出窗口一定要选`保留使用United States – English`，然后点击`GET`，然后浏览器会有弹框，点击允许跳转，之后会跳转到Microsoft Store，点击`install`，就会安装`Amazon Appstore`和`Windows Subsystem for Android`，等待安装完成。之后可以反向操作，把系统语言改成中文。
 
-至此，如果你有美国VPN，已经可以在亚马逊应用商店下载安卓应用程序了，但里边应用程序有限，且需要美国VPN，想自由安装应用程序接着往下看。
+至此，如果你身在美国，已经可以在亚马逊应用商店下载安卓应用程序了，但里边应用程序有限，且需要身在美国，想自由安装应用程序接着往下看。
 
 ### 4、设置安卓子系统的开发者模式
 
