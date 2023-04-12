@@ -113,3 +113,6 @@ deploy:
   # - type: git
   #   repo: git@gitee.com:dr34m/dr34m.git
   #   branch: master
+
+sitemap:
+  path: sitemap.xml
