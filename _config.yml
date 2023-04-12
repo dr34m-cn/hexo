@@ -114,5 +114,21 @@ deploy:
   #   repo: git@gitee.com:dr34m/dr34m.git
   #   branch: master
 
+# sitemap
 sitemap:
   path: sitemap.xml
+
+# feed
+feed:
+  enable: true
+  type:
+    - atom
+    - rss2
+  path:
+    - atom.xml
+    - rss2.xml
+  limit: 0
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+
