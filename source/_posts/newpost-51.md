@@ -177,19 +177,7 @@ mv nacos /usr/local/nacos
 cd /usr/local/nacos
 ```
 
-### 3.2 修改配置
-
-`vi conf/application.properties`，把其中以下行解开注释，并配置自己的mysql信息
-
-```shell
-db.num=1
-
-db.url.0=jdbc:mysql...
-db.user.0=xxx
-db.password.0=xxx
-```
-
-### 3.3 初始化nacos数据库
+### 3.2 初始化nacos数据库
 
 进入mysql命令行，sql文件在`/usr/local/nacos/conf/nacos-mysql.sql`
 
@@ -199,16 +187,21 @@ source /usr/local/nacos/conf/nacos-mysql.sql
 exit
 ```
 
-### 3.4 放开8848端口
+### 3.3 修改配置
+
+`vi conf/application.properties`，把其中以下行解开注释，并配置自己的mysql信息
 
 ```shell
-# 开放端口
-firewall-cmd --zone=public --add-port=8848/tcp --permanent
-# 重载
-firewall-cmd --reload
+db.num=1
+
+db.url.0=jdbc:mysql...
+db.user.0=xxx
+db.password.0=xxx
+
+nacos.core.auth.enabled=true
 ```
 
-### 3.5 把nacos做成服务并开机自启
+### 3.4 把nacos做成服务并开机自启
 
 ```shell
 vim /lib/systemd/system/nacos.service
@@ -236,6 +229,15 @@ WantedBy=multi-user.target
 systemctl daemon-reload
 systemctl enable nacos
 systemctl start nacos
+```
+
+### 3.5 放开8848端口
+
+```shell
+# 开放端口
+firewall-cmd --zone=public --add-port=8848/tcp --permanent
+# 重载
+firewall-cmd --reload
 ```
 
 ## 4、redis
