@@ -94,8 +94,8 @@ grep 'temporary password' /var/log/mysqld.log
 mysql -uroot -p
 # 然后输入初始密码后回车
 # 下边的操作解除密码规则限制
-mysql> set global validate_password_policy=0;
-mysql> set global validate_password_length=1;
+set global validate_password_policy=0;
+set global validate_password_length=1;
 # 设置密码为`yourpassword`，替换为自己的密码
 set password for root@localhost=password("yourpassword");
 # 允许其他机器远程登录，记得把密码改成自己的
@@ -152,11 +152,16 @@ firewall-cmd --reload
 创建数据库并创建用户授权该数据库（先进入mysql命令行）
 
 ```sql
+set global validate_password_policy=0;
+set global validate_password_length=1;
+
 create database nacos;
 # 改为自己的密码
 CREATE USER 'nacos'@'%' IDENTIFIED BY 'yourpassword';
-GRANT all privileges ON nacos.* TO 'nacos'@'%';
+GRANT all privileges ON `nacos`.* TO 'nacos'@'%';
+# 如果需要创建其他用户以及数据库，可以在此一并创建
 ```
+
 
 ## 3、naocs
 
@@ -186,11 +191,11 @@ db.password.0=xxx
 
 ### 3.3 初始化nacos数据库
 
-进入mysql命令行，sql文件在`/usr/local/nacos/conf/mysql-schema.sql`
+进入mysql命令行，sql文件在`/usr/local/nacos/conf/nacos-mysql.sql`
 
 ```sql
 use naocs;
-source /usr/local/nacos/conf/mysql-schema.sql
+source /usr/local/nacos/conf/nacos-mysql.sql
 exit
 ```
 
@@ -229,8 +234,8 @@ WantedBy=multi-user.target
 
 ```shell
 systemctl daemon-reload
-systemctl enable nacos.service
-systemctl start nacos.service
+systemctl enable nacos
+systemctl start nacos
 ```
 
 ## 4、redis
@@ -273,9 +278,9 @@ make && make install
 `vim /usr/local/redis/redis.conf`，其他保持默认
 
 ```conf
-daemonize yes
 bind 0.0.0.0
 protected-mode no
+daemonize yes
 requirepass 你的密码
 ```
 
@@ -306,8 +311,8 @@ WantedBy=multi-user.target
 
 ```shell
 systemctl daemon-reload
-systemctl enable redis.service
-systemctl start redis.service
+systemctl enable redis
+systemctl start redis
 ```
 
 ### 4.6 放开6379端口
