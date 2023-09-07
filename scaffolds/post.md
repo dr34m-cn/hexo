@@ -1,9 +1,8 @@
 ---
 title: {{ title }}
 date: {{ date }}
-tags: 
-index_img: 
-sticky: 
+tags: [经验, 运维]
+index_img: /assets/headImg/xxx.png
 ---
 
 # 目标
