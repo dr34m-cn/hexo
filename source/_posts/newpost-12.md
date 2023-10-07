@@ -38,6 +38,6 @@ npm install
 ### 另外，请不要在任何情况、任何项目中使用cnpm，可能导致各种意想不到甚至无法修复的问题，如果嫌npm慢，可以换淘宝源来解决
 
 ```shell
-npm config set registry https://registry.npm.taobao.org
+npm config set registry https://registry.npmmirror.com/
 ```
 
