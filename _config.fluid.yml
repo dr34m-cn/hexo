@@ -1021,7 +1021,7 @@ static_prefix:
   # github_markdown: https://lib.baomitu.com/github-markdown-css/4.0.0/
   github_markdown: /assets/static/
 
-  # jquery: https://lib.baomitu.com/jquery/3.6.0/
+  # jquery: https://lib.baomitu.com/jquery/3.6.4/
   jquery: /assets/static/
 
   # bootstrap: https://lib.baomitu.com/twitter-bootstrap/4.6.1/
@@ -1039,10 +1039,10 @@ static_prefix:
   # fancybox: https://lib.baomitu.com/fancybox/3.5.7/
   fancybox: /assets/static/
 
-  # nprogress: https://lib.baomitu.com/nprogress/0.2.0/
+  # # nprogress: https://lib.baomitu.com/nprogress/0.2.0/
   nprogress: /assets/static/
 
-  # mathjax: https://lib.baomitu.com/mathjax/3.2.1/
+  # # mathjax: https://lib.baomitu.com/mathjax/3.2.1/
   mathjax: /assets/static/
 
   # katex: https://lib.baomitu.com/KaTeX/0.15.6/
