@@ -79,4 +79,4 @@ static_prefix:
   hint: /assets/static/
 ```
 
-需要注意的是，个别js文件包含两个大括号的关键字，会导致hexo编译报错，在我的文件中已经修改，如果是你自行从官网下载，需要手动调整。
+修改`_config.yml`文件，添加`skip_render: assets/static/*`
