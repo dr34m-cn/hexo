@@ -9,19 +9,22 @@ date: 2023-12-14 15:26:20
 
 # 目标
 
-使用Python对支持`ONVIF`的设备进行控制，包括设备发现，获取`RTSP地址`，获取设备信息，截图，云台控制与缩放，设置时间等。
+使用Python管理支持`ONVIF`的设备。支持：
 
-以下均基于`Python3.11`，其他版本可能略有不同。
+* 设备发现
+* 获取RTSP地址
+* 获取设备信息
+* 截图
+* 云台控制、缩放与聚焦
+* 设置时间
 
 <!--more-->
 
-参考文档：[wsdl文档](https://www.onvif.org/onvif/ver20/util/operationIndex.html)、[Python API](https://pypi.org/project/onvif/)
+参考文档：[wsdl文档](https://www.onvif.org/onvif/ver20/util/operationIndex.html)、[Python API](https://pypi.org/project/onvif/) 本文严重参考并感谢：[《ONVIF with python》](https://blog.csdn.net/u010881576/article/details/116885774)
 
-本文严重参考并感谢：[《ONVIF with python》](https://blog.csdn.net/u010881576/article/details/116885774)
+本文在上边的基础上，支持了多画面多码流的摄像头与NVR，并对更多功能做了详细说明，以下均基于`Python3.11`，其他版本可能略有不同
 
-本文在上边的基础上，支持了多画面多码流的摄像头，并对更多功能做了详细说明
-
-
+2024/1/23更新：适配NVR（多摄像头模式，可以独立控制每个摄像头），兼容了更多设备（部分设备的ONVIF有些限制，现在做了兼容）
 
 # 实现
 
@@ -66,7 +69,7 @@ def checkPwdAndGetCam(ip, port, usr, pwd):
                 "<br/><br/><front style='color: #aaa;'>异常信息：%s</front>" % str(e))
         else:
             raise Exception(
-                "请检查账号密码是否正确；<br/>如果您确认账号密码正确，摄像头时间与服务器时间差异过大可能导致验证失败。"
+                "请检查账号密码是否正确。"
                 "<br/><br/><front style='color: #aaa;'>异常信息：%s</front>" % str(e))
     return {
         'cam': cam,
@@ -76,49 +79,67 @@ def checkPwdAndGetCam(ip, port, usr, pwd):
 
 
 class OnvifClient:
-    def __init__(self, ip, port: int, usr, pwd, token=None, sourceToken=None):
+    def __init__(self, ip, port: int, usr, pwd, token=None, sourceToken=None, nodeToken=False, needSnapImg=True, needPtz=True):
         """
         初始化参数
         :param ip:
         :param port:
         :param usr:
         :param pwd:
-        :param sourceToken: 每个画面会有一个独立的sourceToken，通常一个摄像头只有一个画面，有些红外、双摄之类的摄像头会有多个画面
         :param token: 每个码流都会有一个独立的token，通常一个画面会有2个或更多码流，例如主码流&辅码流
+        :param sourceToken: 每个画面会有一个独立的sourceToken，通常一个摄像头只有一个画面，有些红外、双摄之类的摄像头会有多个画面
+        :param nodeToken: 用于获取PTZ控制信息的token，因为nodeToken有可能为None，所以用False表示没传
+        :param needSnapImg: 是否需要截图，选否会加快速度
+        :param needPtz: 是否需要PTZ控制，选否会加快速度，一般查摄像头列表时可以传False
         """
         self.usr = usr
         self.pwd = pwd
         result = checkPwdAndGetCam(ip, port, usr, pwd)
-        self.cam = result['cam']
-        self.ptz = self.cam.create_ptz_service() if bool(self.cam.devicemgmt.GetCapabilities().PTZ) else None
-        self.media = result['media']
-        self.imaging = self.cam.create_imaging_service()
         self.profiles = result['profiles']
+        self.cam = result['cam']
+        self.media = result['media']
+        self.needSnapImg = needSnapImg
         # 如果没传token，默认使用第一个token
         self.token = token if token is not None else self.profiles[0].token
         # 如果没传sourceToken，默认使用第一个sourceToken
         self.sourceToken = sourceToken if sourceToken is not None \
             else self.profiles[0].VideoSourceConfiguration.SourceToken
-        self.ptzNode = self.ptz.GetNodes()[0] if self.ptz is not None else None
-        # PTZ云台移动速度峰值
-        self.PanTiltSpeedMax = self.ptzNode.SupportedPTZSpaces.PanTiltSpeedSpace[0].XRange.Max \
-            if self.ptzNode is not None and len(self.ptzNode.SupportedPTZSpaces.PanTiltSpeedSpace) > 0 else None
-        # PTZ缩放速度峰值
-        self.ZoomSpeedMax = self.ptzNode.SupportedPTZSpaces.ZoomSpeedSpace[0].XRange.Max \
-            if self.ptzNode is not None and len(self.ptzNode.SupportedPTZSpaces.ZoomSpeedSpace) > 0 else None
-        self.MoveOption = self.imaging.GetMoveOptions({'VideoSourceToken': self.sourceToken})
+        # 如果没传nodeToken，默认使用第一个nodeToken
+        PTZConfiguration = self.profiles[0].PTZConfiguration
+        self.nodeToken = nodeToken if nodeToken is not False \
+            else (PTZConfiguration.NodeToken if PTZConfiguration is not None else None)
+        if needPtz:
+            self.ptz = self.cam.create_ptz_service() if bool(self.cam.devicemgmt.GetCapabilities().PTZ) else None
+            self.imaging = self.cam.create_imaging_service()
+            self.ptzNode = self.ptz.GetNode({
+                'NodeToken': self.nodeToken
+            }) if self.ptz is not None and self.nodeToken is not None else None
+            self.MoveOption = self.imaging.GetMoveOptions({'VideoSourceToken': self.sourceToken})
+        else:
+            self.cam = self.ptz = self.imaging = self.ptzNode = self.MoveOption = None
+        if self.ptzNode is not None:
+            SupportedPTZSpaces = self.ptzNode.SupportedPTZSpaces
+            # PTZ云台移动速度峰值
+            if len(SupportedPTZSpaces.PanTiltSpeedSpace) > 0:
+                PanTiltSpeedSpace = SupportedPTZSpaces.PanTiltSpeedSpace
+            elif len(SupportedPTZSpaces.ContinuousPanTiltVelocitySpace) > 0:
+                PanTiltSpeedSpace = SupportedPTZSpaces.ContinuousPanTiltVelocitySpace
+            else:
+                PanTiltSpeedSpace = None
+            self.PanTiltSpeedMax = PanTiltSpeedSpace[0].XRange.Max if PanTiltSpeedSpace is not None else None
+            # PTZ缩放速度峰值
+            if len(SupportedPTZSpaces.ZoomSpeedSpace) > 0:
+                ZoomSpeedSpace = SupportedPTZSpaces.ZoomSpeedSpace
+            elif len(SupportedPTZSpaces.ContinuousZoomVelocitySpace) > 0:
+                ZoomSpeedSpace = SupportedPTZSpaces.ContinuousZoomVelocitySpace
+            else:
+                ZoomSpeedSpace = None
+            self.ZoomSpeedMax = ZoomSpeedSpace[0].XRange.Max if ZoomSpeedSpace is not None else None
+        else:
+            self.PanTiltSpeedMax = self.ZoomSpeedMax = None
         # 聚焦移动速度峰值
         self.MoveSpeedMax = self.MoveOption.Continuous.Speed.Max \
             if self.MoveOption is not None else None
-        self.ImagingIris = self.imaging.GetOptions({
-            'VideoSourceToken': self.sourceToken
-        }).Exposure.Iris
-        # 光圈最值
-        self.IrisMin = None
-        self.IrisMax = None
-        if self.ImagingIris is not None:
-            self.IrisMin = self.ImagingIris.Min
-            self.IrisMax = self.ImagingIris.Max
 
     def get_rtsp(self):
         """
@@ -136,11 +157,12 @@ class OnvifClient:
                 res_uri = res_uri.replace('rtsp://', 'rtsp://%s:%s@' % (self.usr, self.pwd))
             result.append({
                 'source': profile.VideoSourceConfiguration.SourceToken,
+                'node': profile.PTZConfiguration.NodeToken if profile.PTZConfiguration is not None else None,
                 'uri': res_uri,
                 'token': profile.token,
                 'videoEncoding': profile.VideoEncoderConfiguration.Encoding,
                 'Resolution': serialize_object(profile.VideoEncoderConfiguration.Resolution),
-                'img': self.snip_image(profile.token)
+                'img': self.snip_image(profile.token) if self.needSnapImg else None
             })
         sortedResult = sorted(result, key=lambda d: d['source'])
         groupData = groupby(sortedResult, key=lambda x: x['source'])
@@ -209,34 +231,6 @@ class OnvifClient:
         else:
             self.imaging.Stop({'VideoSourceToken': token})
 
-    # def iris_move(self, speed=None, sourceToken=None):
-    #     """
-    #     光圈移动（好像没用）
-    #     :param sourceToken:
-    #     :param speed: None-不移动，True-光圈+，False-光圈-
-    #     """
-    #     if speed is None:
-    #         return
-    #     if self.ImagingIris is None:
-    #         raise Exception("当前设备不支持光圈调节")
-    #     token = sourceToken if sourceToken is not None else self.sourceToken
-    #     imagingIris = self.imaging.GetImagingSettings({
-    #         'VideoSourceToken': token
-    #     }).Exposure.Iris
-    #     if speed is True:
-    #         iris = imagingIris + 0.1 if imagingIris + 0.1 < self.IrisMax else self.IrisMax
-    #     else:
-    #         iris = imagingIris - 0.1 if imagingIris - 0.1 > self.IrisMin else self.IrisMin
-    #     self.imaging.SetImagingSettings({
-    #         'VideoSourceToken': token,
-    #         'ImagingSettings': {
-    #             'Exposure': {
-    #                 'Mode': 'MANUAL',
-    #                 'Iris': iris
-    #             }
-    #         }
-    #     })
-
     def set_cam_time(self, timeStamp=None):
         """
         设置时间
@@ -251,6 +245,9 @@ class OnvifClient:
         self.cam.devicemgmt.SetSystemDateAndTime({
             'DateTimeType': 'Manual',
             'DaylightSavings': False,
+            'TimeZone': {
+                'TZ': 'CST-8'
+            },
             'UTCDateTime': {
                 'Time': {
                     'Hour': utc_now.hour,
@@ -266,26 +263,71 @@ class OnvifClient:
         })
 
 
-def ws_discovery():
+def ptzChangeByClient(client, codeStr, status, speed=50.0):
     """
-    发现设备
-    :return: 返回支持onvif协议的设备ip以及onvif端口号
+    PTZ控制
+    :param client: onvif客户端
+    :param speed: 相对速度，1-100
+    :param status:  状态，1-开始，0-停止
+    :param codeStr: 标志字符串
     """
-    result = []
-    wsd = WSDiscovery()
-    wsd.start()
-    services = wsd.searchServices()
-    for service in services:
-        url = service.getXAddrs()[0]
-        if 'onvif' in url and '//' in url:
-            uri = url.split('//')[1]
-            ipAddr = uri.split('/')[0] if '/' in uri else uri
-            result.append({
-                'ip': ipAddr.split(':')[0] if ':' in ipAddr else ipAddr,
-                'port': int(ipAddr.split(':')[1]) if ':' in ipAddr else 80
-            })
-    wsd.stop()
-    return result
+    ptzList = ['Up', 'Right', 'Down', 'Left', 'LeftUp', 'RightUp', 'LeftDown', 'RightDown', 'ZoomWide', 'ZoomTele']
+    focusList = ['FocusFar', 'FocusNear']
+    if codeStr in ptzList:
+        if client.ptz is None:
+            if status == 1:
+                raise Exception("当前设备不支持PTZ控制")
+            else:
+                return
+        if status == 0:
+            if 'Zoom' not in codeStr:
+                if client.PanTiltSpeedMax is None:
+                    return
+            else:
+                if client.ZoomSpeedMax is None:
+                    return
+            client.ptz_move()
+        else:
+            PanTiltSpeed = 0
+            ZoomSpeed = 0
+            if 'Zoom' not in codeStr:
+                if client.PanTiltSpeedMax is None:
+                    raise Exception("当前设备不支持云台控制")
+                PanTiltSpeed = client.PanTiltSpeedMax * float(speed) / 100.0
+                speedTilt = PanTiltSpeed if 'Up' in codeStr else (
+                    PanTiltSpeed * -1.0 if 'Down' in codeStr else 0)
+                speedPan = PanTiltSpeed if 'Right' in codeStr else (
+                    PanTiltSpeed * -1.0 if 'Left' in codeStr else 0)
+                params = {
+                    'PanTilt': {
+                        'x': speedPan,
+                        'y': speedTilt
+                    }
+                }
+            else:
+                if client.ZoomSpeedMax is None:
+                    raise Exception("当前设备不支持缩放控制")
+                ZoomSpeed = client.ZoomSpeedMax * float(speed) / 100.0
+                speedZoom = 0 if 'Zoom' not in codeStr else (
+                    ZoomSpeed * -1.0 if 'Wide' in codeStr else ZoomSpeed)
+                params = {
+                    'Zoom': speedZoom
+                }
+            client.ptz_move(params)
+    elif codeStr in focusList:
+        if client.MoveSpeedMax is None:
+            if status == 1:
+                raise Exception("当前设备不支持聚焦控制")
+            else:
+                return
+        if status == 0:
+            client.focus_move()
+        else:
+            MoveSpeed = client.MoveSpeedMax * float(speed) / 100.0
+            client.focus_move(MoveSpeed if 'FocusNear' == codeStr else MoveSpeed * -1.0)
+    else:
+        if status == 1:
+            raise Exception("该方式暂不支持")
 ```
 
 调用方
@@ -298,9 +340,11 @@ import json
 # 设备发现
 print(ws_discovery())
 
-client = OnvifClient('192.168.1.10', 80, 'admin', '123456')
+client = OnvifClient('192.168.1.10', 80, 'admin', '123456', needSnapImg=False)
+# 如果要控制特定摄像头，可以下边这样写
+# client = OnvifClient('192.168.1.10', 80, 'admin', '123456', token="ProfileToken002", sourceToken= "VideoSourceToken002", nodeToken="NodeToken002", needSnapImg=False)
 
-# 获取所有画面所有码流的RTSP地址等信息，注意截图转为base64比较大，测试时可以注释掉
+# 获取所有画面所有码流的RTSP地址、token(即ProfileToken)、sourceToken、nodeToken等信息
 print(json.dumps(client.get_rtsp()))
 
 # 获取设备信息
@@ -310,68 +354,11 @@ print(json.dumps(client.get_deviceInfo()))
 client.set_cam_time()
 
 # 云台与聚焦控制
-def ptzChange(ip, port: int, usr, pwd, codeStr, status, speed=50.0, token=None, sourceToken=None):
-    """
-    PTZ控制
-    :param ip:
-    :param port:
-    :param usr:
-    :param pwd:
-    :param sourceToken: 每个画面会有一个独立的sourceToken，通常一个摄像头只有一个画面，有些红外、双摄之类的摄像头会有多个画面
-    :param token: 每个码流都会有一个独立的token，通常一个画面会有2个或更多码流，例如主码流&辅码流
-    :param speed: 相对速度，1-100
-    :param status:  状态，1-开始，0-停止
-    :param codeStr: 标志字符串
-    """
-    client = onvifBase.OnvifClient(ip, port, usr, pwd, token, sourceToken)
-    ptzList = ['Up', 'Right', 'Down', 'Left', 'LeftUp', 'RightUp', 'LeftDown', 'RightDown', 'ZoomWide', 'ZoomTele']
-    focusList = ['FocusFar', 'FocusNear']
-    if codeStr in ptzList:
-        if client.ptz is None:
-            if status == 1:
-                raise Exception("当前设备不支持PTZ控制")
-            else:
-                return
-        if status == 0:
-            client.ptz_move()
-        else:
-            PanTiltSpeed = 0
-            ZoomSpeed = 0
-            if 'Zoom' not in codeStr:
-                if client.PanTiltSpeedMax is None:
-                    raise Exception("当前设备不支持云台控制")
-                PanTiltSpeed = client.PanTiltSpeedMax * float(speed) / 100.0
-            else:
-                if client.ZoomSpeedMax is None:
-                    raise Exception("当前设备不支持缩放控制")
-                ZoomSpeed = client.ZoomSpeedMax * float(speed) / 100.0
-            speedTilt = str(PanTiltSpeed) if 'Up' in codeStr else (
-                '-' + str(PanTiltSpeed) if 'Down' in codeStr else '0')
-            speedPan = str(PanTiltSpeed) if 'Right' in codeStr else (
-                '-' + str(PanTiltSpeed) if 'Left' in codeStr else '0')
-            speedZoom = '0' if 'Zoom' not in codeStr else (
-                '-' + str(ZoomSpeed) if 'Wide' in codeStr else str(ZoomSpeed))
-            client.ptz_move({
-                'PanTilt': {
-                    'x': speedPan,
-                    'y': speedTilt
-                },
-                'Zoom': speedZoom
-            })
-    elif codeStr in focusList:
-        if client.MoveSpeedMax is None:
-            if status == 1:
-                raise Exception("当前设备不支持聚焦控制")
-            else:
-                return
-        if status == 0:
-            client.focus_move()
-        else:
-            MoveSpeed = client.MoveSpeedMax * float(speed) / 100.0
-            client.focus_move(str(MoveSpeed) if 'FocusNear' == codeStr else '-' + str(MoveSpeed))
-    else:
-        if status == 1:
-            raise Exception("该方式暂不支持")
-
+# 云台上移
+ptzChangeByClient(client, 'Up', 1)
+# 移动一秒
+time.sleep(1)
+# 然后停止
+ptzChangeByClient(client, 'Up', 0)
 ```
 
