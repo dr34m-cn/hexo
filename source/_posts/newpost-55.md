@@ -19,13 +19,16 @@ date: 2024-04-10 17:24:35
 
 ```js
 function calcByte(val) {
-    var unitList = ['B', 'KB', 'MB', 'GB', 'TB'];
-    for (var i = 0; i < unitList.length; i++) {
+    let unitList = ['B', 'KB', 'MB', 'GB', 'TB'];
+    let i = 0;
+    for (i = 0; i < unitList.length; i++) {
         if (val < 1024 ** (i + 1)) {
             return (val / (1024 ** i)).toFixed(2) + unitList[i];
         }
     }
+    // 如果超出最大单位，显示为最大单位
+    return (val / (1024 ** (i - 1))).toFixed(2) + unitList[i - 1];
 }
 ```
 
-入参为字节数值，如果不够，在`TB`后边接着加即可，其中`**`表示次方，如2的3次方表示为`2**3`
+入参为字节，数值类型；如果觉得`TB`不够，在`TB`后边接着加即可，其中`**`表示次方，如2的3次方表示为`2**3`
