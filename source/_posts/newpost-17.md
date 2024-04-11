@@ -2,6 +2,7 @@
 title: 常用的Linux进程基本命令
 date: 2021-07-12 14:44:07
 tags: 运维
+index_img: /assets/headImg/linux.png
 ---
 
 #### 按内存或cpu占用排序

@@ -2,6 +2,7 @@
 title: Java实现文件重命名，Java文件追加写入，java读取图片尺寸
 date: 2017-12-15 17:47:38
 tags: [编程,Java]
+index_img: /assets/headImg/java.png
 ---
 ### 起由
 

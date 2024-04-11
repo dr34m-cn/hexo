@@ -2,6 +2,7 @@
 title: mysql获取最近一段时间数据
 date: 2020-11-26 16:25:56
 tags: [编程,MySQL]
+index_img: /assets/headImg/mysql.png
 ---
 
 * 获取最近七天，其中`CREATE_TIME`改为实际表中存储时间的字段

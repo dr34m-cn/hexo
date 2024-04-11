@@ -2,6 +2,7 @@
 title: centos中jenkins配置环境变量
 date: 2020-11-03 18:22:55
 tags: [运维,持续集成]
+index_img: /assets/headImg/jenkins.png
 ---
 
 起由：在Jenkins配置脚本期望执行npm命令，但实际没有执行，也没有报错

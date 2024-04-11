@@ -2,6 +2,7 @@
 title: VsCode开发Python常用配置
 date: 2021-06-24 16:06:11
 tags: [编程,Python]
+index_img: /assets/headImg/python.png
 ---
 
 ```js

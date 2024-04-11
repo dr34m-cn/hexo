@@ -2,6 +2,7 @@
 title: JavaScript获取当前周或下n周的周n的日期
 date: 2020-12-15 17:32:57
 tags: [JavaScript,前端]
+index_img: /assets/headImg/js.png
 ---
 
 调用方法`getDate(cur_m, day_m)`

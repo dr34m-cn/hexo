@@ -2,6 +2,7 @@
 title: centos安装jenkins
 date: 2020-11-03 17:58:28
 tags: [运维,持续集成]
+index_img: /assets/headImg/jenkins.png
 ---
 
 ## 一、安装jdk

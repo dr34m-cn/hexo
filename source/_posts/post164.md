@@ -2,6 +2,7 @@
 title: NSA工具包验证之IIS6.0漏洞利用
 date: 2017-06-15 21:20:05
 tags: 网络安全
+index_img: /assets/headImg/kali.png
 ---
 
 ### 验证环境：

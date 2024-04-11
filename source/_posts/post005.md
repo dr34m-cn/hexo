@@ -2,6 +2,7 @@
 title: 一个小白的自学建站史（菜鸟建站入门）
 date: 2017-03-07 22:14:49
 tags: [运维,Nginx]
+index_img: /assets/headImg/nginx.png
 ---
 
 # 接触

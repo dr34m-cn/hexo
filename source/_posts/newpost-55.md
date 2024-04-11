@@ -3,7 +3,7 @@ title: JS计算字节大小，把字节转换为KB/MB/GB/TB等
 tags:
   - JavaScript
   - 前端
-index_img: /assets/headImg/nodejs.png
+index_img: /assets/headImg/js.png
 date: 2024-04-10 17:24:35
 ---
 
@@ -23,11 +23,11 @@ function calcByte(val) {
     let i = 0;
     for (i = 0; i < unitList.length; i++) {
         if (val < 1024 ** (i + 1)) {
-            return (val / (1024 ** i)).toFixed(2) + unitList[i];
+            return (val / (1024 ** i)).toFixed(2).replace(/\.?0*$/, '') + unitList[i];
         }
     }
     // 如果超出最大单位，显示为最大单位
-    return (val / (1024 ** (i - 1))).toFixed(2) + unitList[i - 1];
+    return (val / (1024 ** (i - 1))).toFixed(2).replace(/\.?0*$/, '') + unitList[i - 1];
 }
 ```
 

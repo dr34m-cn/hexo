@@ -2,6 +2,7 @@
 title: svn提交后jenkins自动部署
 date: 2020-11-13 14:53:49
 tags: [运维,持续集成]
+index_img: /assets/headImg/jenkins.png
 ---
 
 ## 一、jenkins相关

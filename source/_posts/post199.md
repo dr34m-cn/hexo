@@ -2,6 +2,7 @@
 title: 搭建L(Linux)+A(Apache)+M(MySQL)+P(PHP)网站环境，并安装Discuz
 date: 2017-06-16 21:17:32
 tags: 运维
+index_img: /assets/headImg/linux.png
 ---
 
 ### 搭建LAMP环境：以下基于腾讯云镜像CentOS 6.8 64bit，本方法不适用于其他镜像

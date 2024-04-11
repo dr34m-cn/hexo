@@ -2,6 +2,7 @@
 title: 海滨校园助手api使用文档
 date: 2018-06-04 15:25:08
 tags: [文档,编程]
+index_img: /assets/headImg/hb.png
 ---
 
 ### 公共接口

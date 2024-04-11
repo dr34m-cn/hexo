@@ -2,6 +2,7 @@
 title: FBCTF汉化简体中文免费下载，FBCTF更新缓存代码
 date: 2017-03-17 22:40:52
 tags: [分享,汉化]
+index_img: /assets/headImg/fbctf.png
 ---
 
 [下载中文汉化版](http://d52.pw/fb)

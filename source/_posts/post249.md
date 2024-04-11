@@ -2,6 +2,7 @@
 title: centos下hexo + svn + jenkins实现博客自动部署
 date: 2020-11-04 09:53:02
 tags: [运维,持续集成]
+index_img: /assets/headImg/jenkins.png
 ---
 
 起由：hexo是一个很好用的轻量级博客系统，生成纯静态相对安全而且高性能，但是每次写完博文都需要手动生成静态文件，部署到服务器，影响生活，于是就考虑使用jenkins实现自动部署。

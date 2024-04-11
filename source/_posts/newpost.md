@@ -2,6 +2,7 @@
 title: 常见nginx反向代理配置
 date: 2020-11-13 10:20:28
 tags: [运维,Nginx]
+index_img: /assets/headImg/nginx.png
 ---
 
 * 此配置可以用于jenkins反向代理等

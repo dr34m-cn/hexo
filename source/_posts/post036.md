@@ -2,6 +2,7 @@
 title: wordpress发送邮件设置以及常见问题解决
 date: 2017-03-09 14:26:16
 tags: 运维
+index_img: /assets/headImg/js.png
 ---
 
 关于wordpress的搭建在我的另一篇文章"[一个小白的自学建站史（菜鸟建站入门）](/2017/03/post5)"的文末已经有了较为详细的解答，需要的朋友可以参考下。本文主要针对于wordpress的邮件设置，以下所有均在wordpress4.7.3环境下进行。

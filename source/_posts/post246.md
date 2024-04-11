@@ -2,7 +2,7 @@
 title: centos安装svn服务器
 date: 2020-11-03 17:11:47
 tags: 运维
-toc: true
+index_img: /assets/headImg/svn.png
 ---
 
 ## 一、安装svn

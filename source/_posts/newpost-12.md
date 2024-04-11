@@ -2,6 +2,7 @@
 title: 删除node_modules重新安装
 date: 2021-03-18 14:48:05
 tags: [编程,前端]
+index_img: /assets/headImg/nodejs.png
 ---
 
 * 1.关闭项目，终端中进入项目目录

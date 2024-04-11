@@ -2,6 +2,7 @@
 title: 前端下载二进制文件
 date: 2020-11-30 09:28:30
 tags: 前端
+index_img: /assets/headImg/js.png
 ---
 
 假设你从后台获取到的二进制数据为`res`，则

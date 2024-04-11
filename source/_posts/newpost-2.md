@@ -2,6 +2,7 @@
 title: python - pip换源
 date: 2020-11-16 17:06:23
 tags: [运维,Python]
+index_img: /assets/headImg/python.png
 ---
 
 * windows直接在user目录中创建一个pip目录，如：C:\Users\xx\pip，新建文件pip.ini，内容如下

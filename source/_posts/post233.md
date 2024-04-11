@@ -2,7 +2,7 @@
 title: Hexo安装配置并托管至github
 date: 2017-12-07 18:27:36
 tags: 运维
-toc: true
+index_img: /assets/headImg/hexo&github.png
 ---
 所有可能用到的工具或者文件都放在百度网盘：链接：[https://pan.baidu.com/s/1mhLRnk8](https://pan.baidu.com/s/1mhLRnk8) 提取密码：7ott
 ### 一、安装Hexo到本地

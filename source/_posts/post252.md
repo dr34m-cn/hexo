@@ -2,6 +2,7 @@
 title: h5实现一种自动滚动的告警列表
 date: 2020-11-12 14:25:44
 tags: 前端
+index_img: /assets/headImg/ui.png
 ---
 
 * [项目地址](https://github.com/dr34-m/wrnlist)

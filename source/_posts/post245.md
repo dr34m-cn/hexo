@@ -2,6 +2,7 @@
 title: Ubuntu 20.04 换国内源
 date: 2020-11-02 14:57:54
 tags: 运维
+index_img: /assets/headImg/linux.png
 ---
 
 编辑 `/etc/apt/sources.list`

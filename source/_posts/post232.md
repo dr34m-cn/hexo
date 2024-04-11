@@ -2,6 +2,7 @@
 title: 新起点，新征程
 date: 2017-12-03 09:21:20
 tags: 随笔
+index_img: /assets/headImg/note.png
 ---
 
 ## 新起点，新征程

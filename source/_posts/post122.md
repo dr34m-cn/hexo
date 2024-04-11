@@ -2,6 +2,7 @@
 title: 在腾讯云服务器搭建FBCTF平台
 date: 2017-03-30 19:56:04
 tags: [运维,网络安全]
+index_img: /assets/headImg/fbctf.png
 ---
 
 # 前言

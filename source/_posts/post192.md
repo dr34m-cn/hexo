@@ -2,6 +2,7 @@
 title: 搭建L(Linux)+N(Nginx)+M(MySQL)+P(PHP)网站环境，并安装Wordpress
 date: 2017-06-16 20:57:54
 tags: 运维
+index_img: /assets/headImg/linux.png
 ---
 
 ### 搭建LNMP环境：以下基于腾讯云镜像CentOS 6.8 64bit，或不适用于其他镜像

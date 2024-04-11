@@ -2,6 +2,7 @@
 title: 一个不到300行的C语言消灭敌机游戏
 date: 2017-06-17 12:41:59
 tags: [编程,C]
+index_img: /assets/headImg/js.png
 ---
 
 ### 一个不到300行的C语言消灭敌机游戏

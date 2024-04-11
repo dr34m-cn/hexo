@@ -2,6 +2,7 @@
 title: python实现微信jsapi签名
 date: 2021-06-24 16:12:39
 tags: [编程,Python]
+index_img: /assets/headImg/python.png
 ---
 
 * 以下完整演示了获取access_token，获取ticket，最后签名返回前端全过程。

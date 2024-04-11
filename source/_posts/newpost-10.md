@@ -2,6 +2,7 @@
 title: 基于firewalld端口转发
 date: 2021-02-08 15:07:53
 tags: 运维
+index_img: /assets/headImg/linux.png
 ---
 
 ## 1.首先确认firewalld已经安装

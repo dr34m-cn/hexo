@@ -2,6 +2,7 @@
 title: Python自动处理依赖
 date: 2019-11-14 20:45:54
 tags: [编程, Python]
+index_img: /assets/headImg/python.png
 ---
 
 ### 一、起由
