@@ -30,7 +30,7 @@ jobs:
 
     - name: 安装腾讯云依赖
       run: |
-        sudo pip install coscmd
+        sudo pip install coscmd==1.8.6.34
 
     - name: 配置腾讯云依赖
       env:
