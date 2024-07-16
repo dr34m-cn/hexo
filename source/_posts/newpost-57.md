@@ -56,54 +56,54 @@ TaoSync基于[AList](https://alist.nn.ci/zh/)实现自动同步功能，可以�
 https://docker.hlyun.org
 ```
 
-![image-20240716205710076](./newpost-57/image-20240716205710076.png)
+![image-20240716205710076](newpost-57/image-20240716205710076.png)
 
 ## 一、AList安装
 
 镜像仓库搜索`alist`，找到下边的下载
 
-![image-20240716205824967](./newpost-57/image-20240716205824967.png)
+![image-20240716205824967](newpost-57/image-20240716205824967.png)
 
 到镜像页面确认其下载完成后，点击后边的新建，参考配置如下
 
-<img src="./newpost-57/image-20240716210638821.png" alt="image-20240716210638821" style="zoom: 33%;" /><img src="./newpost-57/image-20240716210712748.png" alt="image-20240716210712748" style="zoom:33%;" /><img src="./newpost-57/image-20240716210804678.png" alt="image-20240716210804678" style="zoom:33%;" />
+<img src="newpost-57/image-20240716210638821.png" alt="image-20240716210638821" style="zoom: 33%;" /><img src="newpost-57/image-20240716210712748.png" alt="image-20240716210712748" style="zoom:33%;" /><img src="newpost-57/image-20240716210804678.png" alt="image-20240716210804678" style="zoom:33%;" />
 
 创建之后，点击左侧容器菜单，找到创建的容器点击名字进去，点开日志可以看到密码
 
-![image-20240716211206710](./newpost-57/image-20240716211206710.png)
+![image-20240716211206710](newpost-57/image-20240716211206710.png)
 
 通过下边的地址即可访问，输入账号`admin`，密码上边获取的，进去后点下边的管理，点左侧存储，点添加，然后按照[官方文档](https://alist.nn.ci/zh/guide/drivers/)添加存储
 
-![image-20240716212528308](./newpost-57/image-20240716212528308.png)
+![image-20240716212528308](newpost-57/image-20240716212528308.png)
 
 如果要添加本地存储，建议可以通过smb的方式添加，地址为NAS的IP地址，例如我是`192.168.31.2`，用户名密码就是你绿联的用户名密码，分享名称如果是个人文件夹是`personal_folder`，更多可以在电脑地址栏输入`\\192.168.x.x`查看，如下图
 
-![image-20240716212001394](./newpost-57/image-20240716212001394.png)
+![image-20240716212001394](newpost-57/image-20240716212001394.png)
 
 ## 二、TaoSync安装
 
 镜像仓库搜索`tao-sync`，找到下边的下载
 
-![image-20240716212227217](./newpost-57/image-20240716212227217.png)
+![image-20240716212227217](newpost-57/image-20240716212227217.png)
 
 下载完成后在镜像仓库点新建，可以参考下边的配置
 
-<img src="./newpost-57/image-20240716212318855.png" alt="image-20240716212318855" style="zoom:50%;" /><img src="./newpost-57/image-20240716212332392.png" alt="image-20240716212332392" style="zoom:50%;" />
+<img src="newpost-57/image-20240716212318855.png" alt="image-20240716212318855" style="zoom:50%;" /><img src="newpost-57/image-20240716212332392.png" alt="image-20240716212332392" style="zoom:50%;" />
 
 点开容器在日志中可以看到admin的密码
 
-![image-20240716212442276](./newpost-57/image-20240716212442276.png)
+![image-20240716212442276](newpost-57/image-20240716212442276.png)
 
 通过下边的地址访问后，输入用户名admin以及上边的密码进入
 
-![image-20240716212552081](./newpost-57/image-20240716212552081.png)
+![image-20240716212552081](newpost-57/image-20240716212552081.png)
 
 然后创建引擎，输入AList地址(例如我的是`http://192.168.31.2:5244`，请改为你自己的)、账号与密码（注意是AList的，不是TaoSync的）
 
-![image-20240716212854597](./newpost-57/image-20240716212854597.png)
+![image-20240716212854597](newpost-57/image-20240716212854597.png)
 
 然后可以进入作业管理新建作业啦，先选择引擎，然后选择你要备份的目录（来源目录），与你想要备份到哪里（目标目录，可以选择多个），点击确定，备份即可开始！
 
-![image-20240716213109202](./newpost-57/image-20240716213109202.png)
+![image-20240716213109202](newpost-57/image-20240716213109202.png)
 
 你可以随时点进作业详情查看进度，如果文件较多较大，可能会很耗时间，建议刚开始不要操作以免加重负担
