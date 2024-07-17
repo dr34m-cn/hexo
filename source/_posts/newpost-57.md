@@ -3,7 +3,7 @@ title: 如何在绿联NAS中使用TaoSync同步我的文件到各个网盘
 tags:
   - 经验
   - 运维
-index_img: /assets/headImg/docker.png
+index_img: /assets/headImg/tao-alist-docker.png
 date: 2024-07-16 20:39:26
 ---
 
@@ -66,7 +66,11 @@ https://docker.hlyun.org
 
 到镜像页面确认其下载完成后，点击后边的新建，参考配置如下
 
-<img src="/2024/07/newpost-57/image-20240716210638821.png" alt="image-20240716210638821" style="zoom: 33%;" /><img src="/2024/07/newpost-57/image-20240716210712748.png" alt="image-20240716210712748" style="zoom:33%;" /><img src="/2024/07/newpost-57/image-20240716210804678.png" alt="image-20240716210804678" style="zoom:33%;" />
+![image-20240716210638821](newpost-57/image-20240716210638821.png)
+
+![image-20240716210712748](newpost-57/image-20240716210712748.png)
+
+![image-20240716210804678](newpost-57/image-20240716210804678.png)
 
 创建之后，点击左侧容器菜单，找到创建的容器点击名字进去，点开日志可以看到密码
 
@@ -88,7 +92,9 @@ https://docker.hlyun.org
 
 下载完成后在镜像仓库点新建，可以参考下边的配置
 
-<img src="/2024/07/newpost-57/image-20240716212318855.png" alt="image-20240716212318855" style="zoom:50%;" /><img src="/2024/07/newpost-57/image-20240716212332392.png" alt="image-20240716212332392" style="zoom:50%;" />
+![image-20240716212318855.png](newpost-57/image-20240716212318855.png)
+
+![image-20240716212332392.png](newpost-57/image-20240716212332392.png)
 
 点开容器在日志中可以看到admin的密码
 
