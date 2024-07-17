@@ -13,6 +13,8 @@ date: 2024-07-16 20:39:26
 
 <!--more-->
 
+**如果好用欢迎Star：[https://github.com/dr34-m/taosync](https://github.com/dr34-m/taosync)，非常感谢！**
+
 TaoSync基于[AList](https://alist.nn.ci/zh/)实现自动同步功能，可以实现以下不同网盘或存储之间的自动定时同步。
 
 - 本地存储
@@ -66,11 +68,7 @@ https://docker.hlyun.org
 
 到镜像页面确认其下载完成后，点击后边的新建，参考配置如下
 
-![image-20240716210638821](newpost-57/image-20240716210638821.png)
-
-![image-20240716210712748](newpost-57/image-20240716210712748.png)
-
-![image-20240716210804678](newpost-57/image-20240716210804678.png)
+![image-20240717164050496](newpost-57/image-20240717164050496.png)
 
 创建之后，点击左侧容器菜单，找到创建的容器点击名字进去，点开日志可以看到密码
 
@@ -92,15 +90,17 @@ https://docker.hlyun.org
 
 下载完成后在镜像仓库点新建，可以参考下边的配置
 
-![image-20240716212318855.png](newpost-57/image-20240716212318855.png)
-
-![image-20240716212332392.png](newpost-57/image-20240716212332392.png)
+![image-20240717163924294](newpost-57/image-20240717163924294.png)
 
 点开容器在日志中可以看到admin的密码
 
 ![image-20240716212442276](newpost-57/image-20240716212442276.png)
 
 通过下边的地址访问后，输入用户名admin以及上边的密码进入
+
+> 如果日志中没有输出密码，也可以到挂载路径的/log/sys_xxxx.log文件查看密码，通常在第一行
+>
+> 或者进入docker命令行，cd /app/data/log/，然后ls获取到文件名，cat sys_xxxx.log查看
 
 ![image-20240716212552081](newpost-57/image-20240716212552081.png)
 
