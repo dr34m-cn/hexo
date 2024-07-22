@@ -616,7 +616,7 @@ post:
   # Copyright, will be displayed at the end of each post
   copyright:
     enable: true
-    license: 'BY-NC'
+    license: 'BY-NC-SA'
 
   # 文章底部上一篇下一篇功能
   # Link to previous/next post
