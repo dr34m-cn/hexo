@@ -1,5 +1,5 @@
 ---
-title: 内湾穿透工具frp的常用配置
+title: 内网穿透工具frp快速使用
 date: 2023-09-07 14:17:14
 tags: [经验, 运维]
 index_img: /assets/headImg/frp.png
