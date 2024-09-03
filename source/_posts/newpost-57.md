@@ -2,7 +2,7 @@
 title: 如何在绿联NAS中使用TaoSync同步我的文件到各个网盘
 tags:
   - 经验
-  - 运维
+  - 分享
 index_img: /assets/headImg/tao-alist-docker.png
 date: 2024-07-16 20:39:26
 ---
