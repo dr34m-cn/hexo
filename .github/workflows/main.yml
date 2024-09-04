@@ -1,6 +1,6 @@
 name: Hexo博客持续集成
 
-on: 
+on:
   push:
     branches:
       - master

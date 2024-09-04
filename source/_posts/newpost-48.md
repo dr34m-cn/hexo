@@ -9,7 +9,7 @@ index_img: /assets/headImg/electron&xterm.png
 
 <!--more-->
 
-项目已上传Github [https://github.com/dr34-m/electron-term-demo](https://github.com/dr34-m/electron-term-demo)
+项目已上传Github [https://github.com/dr34m-cn/electron-term-demo](https://github.com/dr34m-cn/electron-term-demo)
 
 ### 核心代码
 

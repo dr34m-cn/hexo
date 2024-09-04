@@ -6,7 +6,7 @@ tags: [前端]
 index_img: /assets/headImg/ui.png
 ---
 
-源码地址：[https://github.com/dr34-m/uniapp-demo](https://github.com/dr34-m/uniapp-demo)
+源码地址：[https://github.com/dr34m-cn/uniapp-demo](https://github.com/dr34m-cn/uniapp-demo)
 
 框架后期或有更新，请以源码中`README.md`文档为准
 

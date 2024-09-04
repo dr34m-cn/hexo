@@ -9,11 +9,11 @@ date: 2024-07-16 20:39:26
 
 # 目标
 
-在绿联NAS中使用[TaoSync](https://github.com/dr34-m/taosync)自动定时同步我的文件到各个网盘。
+在绿联NAS中使用[TaoSync](https://github.com/dr34m-cn/taosync)自动定时同步我的文件到各个网盘。
 
 <!--more-->
 
-**如果好用欢迎Star：[https://github.com/dr34-m/taosync](https://github.com/dr34-m/taosync)，非常感谢！**
+**如果好用欢迎Star：[https://github.com/dr34m-cn/taosync](https://github.com/dr34m-cn/taosync)，非常感谢！**
 
 TaoSync基于[AList](https://alist.nn.ci/zh/)实现自动同步功能，可以实现以下不同网盘或存储之间的自动定时同步。
 

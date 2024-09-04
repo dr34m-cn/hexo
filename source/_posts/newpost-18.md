@@ -181,7 +181,7 @@ jobs:
 ```yml
 deploy:
  type: git
- repo: git@github.com:dr34-m/dr34-m.github.io.git
+ repo: git@github.com:dr34m-cn/dr34m-cn.github.io.git
  branch: master
 ```
 
@@ -253,6 +253,6 @@ deploy:
 
 # 结尾
 
-也可以参考[我的项目中的配置](https://github.com/dr34-m/hexo/blob/master/.github/workflows/main.yml)，我的项目优先完成腾讯云COS部署，然后是托管到github，发布 Release。
+也可以参考[我的项目中的配置](https://github.com/dr34m-cn/hexo/blob/master/.github/workflows/main.yml)，我的项目优先完成腾讯云COS部署，然后是托管到github，发布 Release。
 
 参考文章：[利用GitHub+Actions自动部署Hexo博客](https://blog.csdn.net/u012208219/article/details/106883054#comments_15417337)，[GitHub Actions 自动发布Hexo 并通过 FTP上传 到阿里云ECS](https://moeci.com/posts/github-actions-hexo-ftp/)，[githubActions部署文件到服务器](https://blog.csdn.net/qq_39846820/article/details/115422544)

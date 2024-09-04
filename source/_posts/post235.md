@@ -24,7 +24,7 @@ index_img: /assets/headImg/hexo.png
 
 ### 下载
 
-请移步github下载：[https://github.com/dr34-m/yilia-photos](https://github.com/dr34-m/yilia-photos)
+请移步github下载：[https://github.com/dr34m-cn/yilia-photos](https://github.com/dr34m-cn/yilia-photos)
 
 ### 其他
 

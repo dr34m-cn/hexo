@@ -5,7 +5,7 @@ tags: 前端
 index_img: /assets/headImg/ui.png
 ---
 
-* [项目地址](https://github.com/dr34-m/wrnlist)
+* [项目地址](https://github.com/dr34m-cn/wrnlist)
 
 <!--more-->
 

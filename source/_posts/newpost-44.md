@@ -24,7 +24,7 @@ index_img: /assets/headImg/hexo&fluid.png
 
 ## 一、静态资源上传
 
-在`source`文件夹下新建`/assets/static/`目录，复制[https://github.com/dr34-m/hexo/tree/master/source/assets/static](https://github.com/dr34-m/hexo/tree/master/source/assets/static)下所有文件和文件夹没到你本地的`/source/assets/static/`目录下。
+在`source`文件夹下新建`/assets/static/`目录，复制[https://github.com/dr34m-cn/hexo/tree/master/source/assets/static](https://github.com/dr34m-cn/hexo/tree/master/source/assets/static)下所有文件和文件夹没到你本地的`/source/assets/static/`目录下。
 
 ## 二、配置修改
 
