@@ -696,7 +696,7 @@ post:
 # Based on GitHub Issues
 # See: https://utteranc.es
 utterances:
-  repo: dr34-m/dr34-m.github.io
+  repo: dr34m-cn/dr34-m.github.io
   issue_term: pathname
   label: utterances
   theme: github-light
