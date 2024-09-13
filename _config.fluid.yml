@@ -680,7 +680,7 @@ post:
     # 指定的插件，需要同时设置对应插件的必要参数
     # The specified plugin needs to set the necessary parameters at the same time
     # Options: utterances | disqus | gitalk | valine | waline | changyan | livere | remark42 | twikoo | cusdis
-    type: utterances
+    type: giscus
 
 
 #---------------------------
@@ -702,6 +702,24 @@ utterances:
   theme: github-light
   theme_dark: github-dark
   crossorigin: anonymous
+
+
+# Giscus
+# 基于 GitHub Discussions，类似于 Utterances
+# Based on GitHub Discussions, similar to Utterances
+# See: https://giscus.app/
+giscus:
+  repo: dr34m-cn/dr34m-cn.github.io
+  repo-id: MDEwOlJlcG9zaXRvcnkxMTI4MDcyODI=
+  category: Announcements
+  category-id: DIC_kwDOBrlNcs4Cibmt
+  theme-light: light
+  theme-dark: dark
+  mapping: pathname
+  reactions-enabled: 1
+  emit-metadata: 1
+  input-position: top
+  lang: zh-CN
 
 # Disqus
 # 基于第三方的服务，国内用户直接使用容易被墙，建议配合 Disqusjs
