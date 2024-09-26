@@ -26,6 +26,6 @@ data/:          表示忽略data目录下的所有内容，不忽略 data 文件
 a/**/b.txt:     表示忽略a/b.txt, a/x/b.txt,a/x/y/b.txt等
 /mtk/do.doc     表示过滤某个具体文件
 fd1/*           表示忽略/fd1/，/fd0/df1/等下所有文件
-/fd1/*          表示忽略/fd1/下所有文件，不包括/fd0/df1/
+/fd1/*          表示忽略/fd1/下所有文件，不包括/fd0/fd1/,/fd2/fd1/等
 ```
 
