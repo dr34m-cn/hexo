@@ -18,23 +18,14 @@ date: 2024-09-26 10:59:43
 ```gitignore
 .*              表示忽略所有 . 开头的文件和目录
 *.a             表示忽略所有 .a 结尾的文件
-/a.jpg          表示仅仅忽略项目根目录下的 a.jpg 文件，不包括 subdir/a.jpg
-bin/:           表示忽略当前路径下的bin文件夹，该文件夹下的所有内容都会被忽略，不忽略 bin 文件
-/bin:           表示忽略根目录下的bin文件
-/*.c:           表示忽略cat.c，不忽略 build/cat.c
-debug/*.obj:    表示忽略debug/io.obj，不忽略 debug/common/io.obj和tools/debug/io.obj
-**/foo:         表示忽略/foo,a/foo,a/b/foo等
-a/**/b:         表示忽略a/b, a/x/b,a/x/y/b等
-*.log:          表示忽略所有 .log 文件
-/mtk/do.c       表示过滤某个具体文件
-
-----------------------------------------------------------------------------------
-还有一些规则如下：
-fd1/*
-说明：忽略目录 fd1 下的全部内容；注意，不管是根目录下的 /fd1/ 目录，还是某个子目录 /child/fd1/ 目录，都会被忽略；
- 
-/fd1/*
-说明：忽略根目录下的 /fd1/ 目录的全部内容；
-
+/a.jpg          表示仅仅忽略项目根目录下的 a.jpg 文件，不包括 /abc/a.jpg
+data/:          表示忽略data目录下的所有内容，不忽略 data 文件
+/data:          表示忽略根目录下的data文件
+/*.pdf:         表示忽略/a.pdf，不忽略 /doc/a.pdf
+**/a.txt:       表示忽略/a.txt,a/a.txt,a/b/a.txt等
+a/**/b.txt:     表示忽略a/b.txt, a/x/b.txt,a/x/y/b.txt等
+/mtk/do.doc     表示过滤某个具体文件
+fd1/*           表示忽略/fd1/，/fd0/df1/等下所有文件
+/fd1/*          表示忽略/fd1/下所有文件，不包括/fd0/df1/
 ```
 
