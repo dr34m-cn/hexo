@@ -1,5 +1,5 @@
 ---
-title: pyinstaller打包的程序执行报错Failed to extract xxxx: decompression resulted in return code -1!
+title: pyinstaller打包的程序执行报错Failed to extract xxxx decompression resulted in return code -1
 tags:
   - Python
   - 编程
