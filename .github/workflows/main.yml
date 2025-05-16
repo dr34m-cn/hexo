@@ -28,22 +28,14 @@ jobs:
         hexo clean
         hexo generate
 
-    - name: 安装腾讯云依赖
-      run: |
-        sudo pip install coscmd==1.8.6.34
-
-    - name: 配置腾讯云依赖
-      env:
-        SECRET_ID: ${{ secrets.TCLOUD_API_ID }}
-        SECRET_KEY: ${{ secrets.TCLOUD_API_KEY }}
-        BUCKET: blog-1252906577
-        REGION: ap-shanghai
-      run: |
-        coscmd config -a $SECRET_ID -s $SECRET_KEY -b $BUCKET -r $REGION
-
-    - name: 上传到腾讯云COS
-      run: |
-        coscmd upload -rfs --delete ./public/ /
+    - name: 上传腾讯云COS
+      uses: zkqiang/tencent-cos-action@v0.1.0
+      with:
+        args: upload -rfs --delete ./dist/ /
+        secret_id: ${{ secrets.TCLOUD_API_ID }}
+        secret_key: ${{ secrets.TCLOUD_API_KEY }}
+        bucket: blog-1252906577
+        region: ap-shanghai
 
     - name: 配置Git部署私钥
       env:
