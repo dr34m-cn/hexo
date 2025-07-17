@@ -984,6 +984,12 @@ links:
       link: "https://moeci.com/",
       avatar: "https://moeci.com/images/apple-touch-icon-next.png"
     }
+    - {
+      title: "For Future For You",
+      intro: "去最远的未来  看最真的你",
+      link: "http://fanrencli.cn/",
+      avatar: "http://fanrencli.cn/favicon.png"
+    }
 
   # 当成员头像加载失败时，替换为指定图片
   # When the member avatar fails to load, replace the specified image
