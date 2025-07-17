@@ -112,7 +112,7 @@ jobs:
         SOURCE: "./public/"
         REMOTE_HOST: ${{ secrets.SERVER_HOST }}
         REMOTE_USER: ${{ secrets.SERVER_USER }}
-        TARGET: "/www/wwwroot/blog.ctftools.com/"
+        TARGET: "/www/wwwroot/dr34m.cn/"
 ```
 
 这个方式比FTP快非常多，通常数秒即可完成，FTP方式要数分钟。提交后就会自动部署，去服务器查看效果吧。
@@ -125,7 +125,7 @@ jobs:
 
 ![image-20210730110052838](newpost-18/image-20210730110052838.png)
 
-将以下文件追加到仓库`\.github\workflows\main.yml`文件下，将其中的`blog-1252906577`和`ap-shanghai`改为你自己的存储桶名称和地域，`https://blog.ctftools.com/`改为自己的域名后提交，注意缩进，`- name`要和上边的`- name`对齐。
+将以下文件追加到仓库`\.github\workflows\main.yml`文件下，将其中的`blog-1252906577`和`ap-shanghai`改为你自己的存储桶名称和地域，`https://dr34m.cn/`改为自己的域名后提交，注意缩进，`- name`要和上边的`- name`对齐。
 
 ```yml
     - name: 安装腾讯云依赖
@@ -148,7 +148,7 @@ jobs:
     - name: 上传到腾讯云COS并刷新CDN
       run: |
         coscmd upload -rfs --delete ./public/ /
-        tccli cdn PurgePathCache --cli-unfold-argument --Paths https://blog.ctftools.com/ --FlushType flush
+        tccli cdn PurgePathCache --cli-unfold-argument --Paths https://dr34m.cn/ --FlushType flush
 ```
 
 如果不需要刷新CDN则可以简化如下

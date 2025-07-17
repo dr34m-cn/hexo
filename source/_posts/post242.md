@@ -12,7 +12,7 @@ index_img: /assets/headImg/hb.png
 1.公共接口调用链接为：
 
 ```
-https://hbscher.ctftools.com/pubapi?safekey=xxxxx
+https://hbscher.dr34m.cn/pubapi?safekey=xxxxx
 ```
 将其中的`xxxxx`改成对应的秘钥即可，授权秘钥只能使用一次，用完即失效
 
@@ -56,7 +56,7 @@ https://hbscher.ctftools.com/pubapi?safekey=xxxxx
 ```
 url?token=专用秘钥&keytype=索引类型&keyword=索引数据
 ```
-其中url与专用秘钥请联系admin@ctftools.com申请资格，索引类型分为四类，分别是bj(班级)、zy(专业)、uid(学号)、unme(姓名)，索引数据为索引类型对应的数据，例如以下示例：
+其中url与专用秘钥请联系ctftools@qq.com申请资格，索引类型分为四类，分别是bj(班级)、zy(专业)、uid(学号)、unme(姓名)，索引数据为索引类型对应的数据，例如以下示例：
 ```
 url?token=xxxx&keytype=bj&keyword=物联网1601
 
@@ -114,4 +114,4 @@ url?token=xxxx&keytype=uid&keyword=16853046
 }
 ```
 
-问题与建议都可以联系：admin@ctftools.com
+问题与建议都可以联系：ctftools@qq.com

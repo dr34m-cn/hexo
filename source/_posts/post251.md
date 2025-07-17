@@ -5,11 +5,11 @@ tags: 运维
 index_img: /assets/headImg/nginx.png
 ---
 
-使用nginx的alias即可，例如下边的配置将子目录`static_web`代理到`/www/wwwroot/bg.ctftools.com`路径，访问`http://xxx.xx/static_web/index.html`即可达`/www/wwwroot/bg.ctftools.com/index.html`
+使用nginx的alias即可，例如下边的配置将子目录`static_web`代理到`/www/wwwroot/bg.dr34m.cn`路径，访问`http://xxx.xx/static_web/index.html`即可达`/www/wwwroot/bg.dr34m.cn/index.html`
 
 ```nginx
 location ^~ /static_web {
-    alias /www/wwwroot/bg.ctftools.com;
+    alias /www/wwwroot/bg.dr34m.cn;
     index index.html;
     try_files $uri $uri/ /static_web/index.html;
 }

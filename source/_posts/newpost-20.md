@@ -53,7 +53,7 @@ index_img: /assets/headImg/actions.png
 
 ![image-20210730105850716](newpost-20/image-20210730105850716.png)
 
-* 编辑如下，将其中的`blog-1252906577`和`ap-shanghai`改为你自己的存储桶名称和地域，`https://blog.ctftools.com/`改为自己的域名，`./public/`该为自己需要上传的本地路径，如`./`，注意如果传根目录建议把`.git`加入忽略目录，例如`coscmd upload -rfs --delete ./ / --ignore "./.git/*"`
+* 编辑如下，将其中的`blog-1252906577`和`ap-shanghai`改为你自己的存储桶名称和地域，`https://dr34m.cn/`改为自己的域名，`./public/`该为自己需要上传的本地路径，如`./`，注意如果传根目录建议把`.git`加入忽略目录，例如`coscmd upload -rfs --delete ./ / --ignore "./.git/*"`
 
 ```yml
 name: 静态网站持续集成
@@ -91,7 +91,7 @@ jobs:
     - name: 上传到腾讯云COS并刷新CDN
       run: |
         coscmd upload -rfs --delete ./public/ /
-        tccli cdn PurgePathCache --cli-unfold-argument --Paths https://blog.ctftools.com/ --FlushType flush
+        tccli cdn PurgePathCache --cli-unfold-argument --Paths https://dr34m.cn/ --FlushType flush
 ```
 
 上边的代码通过`tccli`刷新CDN，也可参考[这篇文章](https://www.ioiox.com/archives/69.html)通过`腾讯云SCF云函数`刷新CDN

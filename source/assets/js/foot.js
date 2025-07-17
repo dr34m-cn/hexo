@@ -6,7 +6,7 @@
     document.getElementById("nowYear").innerHTML = nowYear;
     setTimeout(function() {
         var beian = document.getElementsByClassName("beian");
-        if (beian && JSON.stringify(beian) != '{}' && window.location.host != 'blog.ctftools.com') {
+        if (beian && JSON.stringify(beian) != '{}' && window.location.host != 'dr34m.cn') {
             beian[0].style.display = 'none';
         }
     }, 500)

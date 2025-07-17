@@ -65,8 +65,8 @@ index_img: /assets/headImg/nginx.png
 在PHPstudy/Apache/conf目录下创建vhost-ssl.conf文件，然后编辑（建议使用notepad++编辑，极不推荐记事本）之如下：
 ```
  <VirtualHost *:443>
-  ServerName www.ctftools.com //这里改为你自己的域名，如果只有一个网站可以把这行删掉
-  DocumentRoot  "C:\WEB\CTFtools" //这里是你的网站目录
+  ServerName www.dr34m.cn //这里改为你自己的域名，如果只有一个网站可以把这行删掉
+  DocumentRoot  "C:\WEB\dr34m" //这里是你的网站目录
   SSLEngine on
   SSLProtocol  all -SSLv2 -SSLv3
   SSLCipherSuite AESGCM:ALL:!DH:!EXPORT:!RC4:+HIGH:!MEDIUM:!LOW:!aNULL:!eNULL
@@ -107,10 +107,10 @@ index_img: /assets/headImg/nginx.png
  switch($the_host)
  {
  //下边的就是带www的网址作为权重网址的例子
-     case 'ctftools.com': //这里改为你的非权重网址
+     case 'dr34m.cn': //这里改为你的非权重网址
      {
          header('HTTP/1.1 301 Moved Permanently'); //301是永久重定向的意思
-         header('Location:https://www.ctftools.com/');  //这里改为你的权重网址
+         header('Location:https://www.dr34m.cn/');  //这里改为你的权重网址
      }
      break;
 //下边的就是不带www的网址作为权重网址的例子
@@ -124,7 +124,7 @@ index_img: /assets/headImg/nginx.png
      default:
      {
          header('HTTP/1.1 302 Moved Permanently'); //302则是临时重定向的意思
-         header('Location:http://error.ctftools.com/404.html');  //这里可以定向到你的404页面
+         header('Location:http://error.dr34m.cn/404.html');  //这里可以定向到你的404页面
      }
  }
 ?>
@@ -142,7 +142,7 @@ index_img: /assets/headImg/nginx.png
 <IfModule mod_rewrite.c>
 RewriteEngine on
 RewriteCond %{SERVER_PORT} !^443$
-RewriteRule ^(.*)$ https://www.ctftools.com/$1 [L,R=301]  //改为你的站点
+RewriteRule ^(.*)$ https://www.dr34m.cn/$1 [L,R=301]  //改为你的站点
 </IfModule>
 ```
 2. 这时候直接访问http:// 加上你的站点，是不是直接就能跳转到https:// 加上你的站点了？
