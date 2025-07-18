@@ -905,7 +905,7 @@ about:
   banner_img_height: 50
   banner_mask_alpha: 0.3
   subtitle:
-  avatar: /assets/img/a101858209e03d25.jpg
+  avatar: /assets/img/avatar.png
   name: "Dr3@m's Blog"
   intro: "真诚都不会被辜负"
   # 更多图标可从 https://hexo.fluid-dev.com/docs/icon/ 查找，`class` 代表图标的 css class，添加 `qrcode` 后，图标不再是链接而是悬浮二维码
@@ -958,7 +958,7 @@ links:
       title: "Se7en's Blog",
       intro: "专注渗透测试",
       link: "https://www.se7ensec.cn/",
-      avatar: "https://www.se7ensec.cn/img/favicon.ico"
+      avatar: "https://logo.dr34m.cn/se7en/avatar.png"
     }
     - {
       title: "CTF资源库",
@@ -988,7 +988,7 @@ links:
       title: "For Future For You",
       intro: "去最远的未来  看最真的你",
       link: "http://fanrencli.cn/",
-      avatar: "http://fanrencli.cn/favicon.png"
+      avatar: "https://logo.dr34m.cn/fanren/favicon.png"
     }
 
   # 当成员头像加载失败时，替换为指定图片
@@ -1005,8 +1005,9 @@ links:
         <li>博客名：Dr34m&apos;s Blog</li>
         <li>简介：真诚都不会被辜负</li>
         <li>链接：https://dr34m.cn</li>
-        <li>图片：https://dr34m.cn/assets/img/favicon.ico</li>
-      </ul>'
+        <li>图片：https://logo.dr34m.cn/avatar.png</li>
+      </ul>
+      <p>申请友链之前请先将本站链接添加到贵站友链~ 因此才知道是不是博主本人<br/>要求：原创博文10+，建站时长1个月+</p>'
 
   # 评论插件
   # Comment plugin
