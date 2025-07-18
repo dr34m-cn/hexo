@@ -990,6 +990,12 @@ links:
       link: "http://fanrencli.cn/",
       avatar: "https://logo.dr34m.cn/fanren/favicon.png"
     }
+    - {
+      title: "Shiro 书架",
+      intro: "辉星皓夜苍千顷，此宵风醉月舞萤",
+      link: "https://snow.js.org/",
+      avatar: "https://snow.js.org/img/share.jpg"
+    }
 
   # 当成员头像加载失败时，替换为指定图片
   # When the member avatar fails to load, replace the specified image
