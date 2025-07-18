@@ -905,7 +905,7 @@ about:
   banner_img_height: 50
   banner_mask_alpha: 0.3
   subtitle:
-  avatar: /assets/img/avatar.png
+  avatar: /assets/img/avatar.jpg
   name: "Dr3@m's Blog"
   intro: "真诚都不会被辜负"
   # 更多图标可从 https://hexo.fluid-dev.com/docs/icon/ 查找，`class` 代表图标的 css class，添加 `qrcode` 后，图标不再是链接而是悬浮二维码
@@ -1005,7 +1005,7 @@ links:
         <li>博客名：Dr34m&apos;s Blog</li>
         <li>简介：真诚都不会被辜负</li>
         <li>链接：https://dr34m.cn</li>
-        <li>图片：https://logo.dr34m.cn/avatar.png</li>
+        <li>图片：https://logo.dr34m.cn/avatar.jpg</li>
       </ul>
       <p>申请友链之前请先将本站链接添加到贵站友链~ 因此才知道是不是博主本人<br/>要求：原创博文10+，建站时长1个月+</p>'
 
