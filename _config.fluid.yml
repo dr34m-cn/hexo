@@ -996,6 +996,18 @@ links:
       link: "https://snow.js.org/",
       avatar: "https://snow.js.org/img/share.jpg"
     }
+    - {
+      title: "SeaEpoch",
+      intro: "她站在那里，就像一个小小的永恒！",
+      link: "https://www.seayj.cn",
+      avatar: "https://www.seayj.cn/img/avatar.png"
+    }
+    - {
+      title: "故里",
+      intro: "苦命打工仔",
+      link: "https://hzy2003628.top/",
+      avatar: "https://hzy2003628.top/images/avatar.png"
+    }
 
   # 当成员头像加载失败时，替换为指定图片
   # When the member avatar fails to load, replace the specified image
@@ -1006,9 +1018,9 @@ links:
   custom:
     enable: true
     content: '<hr>
-      <p>发送邮件到 ctftools@qq.com 申请加入我的友链，按如下格式提供信息：</p>
+      <p>发送邮件到 ctftools@qq.com 或者 在下边评论申请加入我的友链，按如下格式提供信息：</p>
       <ul>
-        <li>博客名：Dr34m&apos;s Blog</li>
+        <li>博客名：Dr3@m</li>
         <li>简介：真诚都不会被辜负</li>
         <li>链接：https://dr34m.cn</li>
         <li>图片：https://logo.dr34m.cn/avatar.jpg</li>
@@ -1018,11 +1030,11 @@ links:
   # 评论插件
   # Comment plugin
   comments:
-    enable: false
+    enable: true
     # 指定的插件，需要同时设置对应插件的必要参数
     # The specified plugin needs to set the necessary parameters at the same time
     # Options: utterances | disqus | gitalk | valine | waline | changyan | livere | remark42 | twikoo | cusdis
-    type: disqus
+    type: giscus
 
 
 #---------------------------
