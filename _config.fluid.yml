@@ -991,22 +991,10 @@ links:
       avatar: "https://logo.dr34m.cn/fanren/favicon.png"
     }
     - {
-      title: "Shiro 书架",
-      intro: "辉星皓夜苍千顷，此宵风醉月舞萤",
-      link: "https://snow.js.org/",
-      avatar: "https://snow.js.org/img/share.jpg"
-    }
-    - {
       title: "SeaEpoch",
       intro: "她站在那里，就像一个小小的永恒！",
-      link: "https://www.seayj.cn",
-      avatar: "https://www.seayj.cn/img/avatar.png"
-    }
-    - {
-      title: "故里",
-      intro: "苦命打工仔",
-      link: "https://hzy2003628.top/",
-      avatar: "https://hzy2003628.top/images/avatar.png"
+      link: "https://www.seaepoch.com/",
+      avatar: "https://www.seaepoch.com/img/avatar.png"
     }
 
   # 当成员头像加载失败时，替换为指定图片
