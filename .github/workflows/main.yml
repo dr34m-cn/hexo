@@ -38,15 +38,16 @@ jobs:
         region: ap-shanghai
     
     - name: 部署到服务器
-      uses: wlixcc/SFTP-Deploy-Action@v1.2.6
+      uses: easingthemes/ssh-deploy@main
       with:
-        username: ${{ secrets.SERVER_USER }}
-        ssh_private_key: ${{ secrets.SERVER_PASS }}
-        server: ${{ secrets.SERVER_IP }}
-        port: ${{ secrets.SERVER_PORT }}
-        local_path: './public/*'
-        remote_path: ${{ secrets.SERVER_REMOTE_PATH }}
-        delete_remote_files: true
+        SSH_PRIVATE_KEY: ${{ secrets.SERVER_PASS }}
+        REMOTE_HOST: ${{ secrets.SERVER_IP }}
+        REMOTE_USER: ${{ secrets.SERVER_USER }}
+        REMOTE_PORT: ${{ secrets.SERVER_PORT }}
+        SOURCE: "public/"
+        TARGET: ${{ secrets.SERVER_REMOTE_PATH }}
+        ARGS: "-rlgoDzvc -i --delete"
+        EXCLUDE: "/.user.ini"
 
     - name: 修改服务器权限
       uses: appleboy/ssh-action@master
