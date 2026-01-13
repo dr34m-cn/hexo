@@ -28,14 +28,14 @@ jobs:
         hexo clean
         hexo generate
 
-    - name: 上传腾讯云COS
-      uses: zkqiang/tencent-cos-action@v0.1.0
-      with:
-        args: upload -rfs --delete ./public/ /
-        secret_id: ${{ secrets.TCLOUD_API_ID }}
-        secret_key: ${{ secrets.TCLOUD_API_KEY }}
-        bucket: blog-1252906577
-        region: ap-shanghai
+    # - name: 上传腾讯云COS
+    #   uses: zkqiang/tencent-cos-action@v0.1.0
+    #   with:
+    #     args: upload -rfs --delete ./public/ /
+    #     secret_id: ${{ secrets.TCLOUD_API_ID }}
+    #     secret_key: ${{ secrets.TCLOUD_API_KEY }}
+    #     bucket: blog-1252906577
+    #     region: ap-shanghai
     
     - name: 部署到服务器
       uses: easingthemes/ssh-deploy@main
