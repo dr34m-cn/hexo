@@ -13,10 +13,10 @@ jobs:
     - name: 检出仓库代码
       uses: actions/checkout@master
 
-    - name: 安装Node.js 14.x
+    - name: 安装Node.js 22.x
       uses: actions/setup-node@master
       with:
-        node-version: "14.x"
+        node-version: "22.x"
 
     - name: 安装Hexo依赖
       run: |
@@ -36,6 +36,26 @@ jobs:
         secret_key: ${{ secrets.TCLOUD_API_KEY }}
         bucket: blog-1252906577
         region: ap-shanghai
+    
+    - name: 部署到服务器
+      uses: wlixcc/SFTP-Deploy-Action@v1.2.6
+      with:
+        username: ${{ secrets.SERVER_USER }}
+        ssh_private_key: ${{ secrets.SERVER_PASS }}
+        server: ${{ secrets.SERVER_IP }}
+        port: ${{ secrets.SERVER_PORT }}
+        local_path: './public/*'
+        remote_path: ${{ secrets.SERVER_REMOTE_PATH }}
+        delete_remote_files: true
+
+    - name: 修改服务器权限
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.SERVER_IP }}
+        port: ${{ secrets.SERVER_PORT }}
+        username: ${{ secrets.SERVER_USER }}
+        key: ${{ secrets.SERVER_PASS }}
+        script: chown -R www:www ${{ secrets.SERVER_REMOTE_PATH }}
 
     - name: 配置Git部署私钥
       env:
@@ -48,7 +68,7 @@ jobs:
 
     - name: 配置Git信息
       run: |
-        git config --global user.name 'dr34-m'
+        git config --global user.name 'dr34m-cn'
         git config --global user.email '1416814478@qq.com'
 
     - name: 部署Hexo到Git
