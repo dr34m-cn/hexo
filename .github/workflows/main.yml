@@ -10,67 +10,58 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: 检出仓库代码
-      uses: actions/checkout@master
+      - name: 检出仓库代码
+        uses: actions/checkout@master
 
-    - name: 安装Node.js 22.x
-      uses: actions/setup-node@master
-      with:
-        node-version: "22.x"
+      - name: 安装Node.js 22.x
+        uses: actions/setup-node@master
+        with:
+          node-version: "22.x"
 
-    - name: 安装Hexo依赖
-      run: |
-        npm install hexo-cli -g
-        npm install
+      - name: 安装Hexo依赖
+        run: |
+          npm install hexo-cli -g
+          npm install
 
-    - name: 构建Hexo
-      run: |
-        hexo clean
-        hexo generate
+      - name: 构建Hexo
+        run: |
+          hexo clean
+          hexo generate
 
-    # - name: 上传腾讯云COS
-    #   uses: zkqiang/tencent-cos-action@v0.1.0
-    #   with:
-    #     args: upload -rfs --delete ./public/ /
-    #     secret_id: ${{ secrets.TCLOUD_API_ID }}
-    #     secret_key: ${{ secrets.TCLOUD_API_KEY }}
-    #     bucket: blog-1252906577
-    #     region: ap-shanghai
-    
-    - name: 部署到服务器
-      uses: easingthemes/ssh-deploy@main
-      with:
-        SSH_PRIVATE_KEY: ${{ secrets.SERVER_PASS }}
-        REMOTE_HOST: ${{ secrets.SERVER_IP }}
-        REMOTE_USER: ${{ secrets.SERVER_USER }}
-        REMOTE_PORT: ${{ secrets.SERVER_PORT }}
-        SOURCE: "public/"
-        TARGET: ${{ secrets.SERVER_REMOTE_PATH }}
-        ARGS: "-rlgoDzvc -i --delete"
-        EXCLUDE: "/.user.ini"
+      # - name: 上传腾讯云COS
+      #   uses: zkqiang/tencent-cos-action@v0.1.0
+      #   with:
+      #     args: upload -rfs --delete ./public/ /
+      #     secret_id: ${{ secrets.TCLOUD_API_ID }}
+      #     secret_key: ${{ secrets.TCLOUD_API_KEY }}
+      #     bucket: blog-1252906577
+      #     region: ap-shanghai
 
-    - name: 修改服务器权限
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.SERVER_IP }}
-        port: ${{ secrets.SERVER_PORT }}
-        username: ${{ secrets.SERVER_USER }}
-        key: ${{ secrets.SERVER_PASS }}
-        script: chown -R www:www ${{ secrets.SERVER_REMOTE_PATH }}
+      - name: 部署到服务器
+        uses: easingthemes/ssh-deploy@main
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.SERVER_PASS }}
+          REMOTE_HOST: ${{ secrets.SERVER_IP }}
+          REMOTE_USER: ${{ secrets.SERVER_USER }}
+          REMOTE_PORT: ${{ secrets.SERVER_PORT }}
+          SOURCE: "public/"
+          TARGET: ${{ secrets.SERVER_REMOTE_PATH }}
+          ARGS: "-rlgoDzvc -i --delete"
+          EXCLUDE: "/.user.ini"
 
-    - name: 配置Git部署私钥
-      env:
-        HEXO_DEPLOY_PRIVATE_KEY: ${{ secrets.HEXO_DEPLOY_PRIVATE_KEY }}
-      run: |
-        mkdir -p ~/.ssh/
-        echo "$HEXO_DEPLOY_PRIVATE_KEY" > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
-        ssh-keyscan github.com >> ~/.ssh/known_hosts
+      - name: 配置Git部署私钥
+        env:
+          HEXO_DEPLOY_PRIVATE_KEY: ${{ secrets.HEXO_DEPLOY_PRIVATE_KEY }}
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$HEXO_DEPLOY_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
 
-    - name: 配置Git信息
-      run: |
-        git config --global user.name 'dr34m-cn'
-        git config --global user.email '1416814478@qq.com'
+      - name: 配置Git信息
+        run: |
+          git config --global user.name 'dr34m-cn'
+          git config --global user.email '1416814478@qq.com'
 
-    - name: 部署Hexo到Git
-      run: hexo deploy
+      - name: 部署Hexo到Git
+        run: hexo deploy
