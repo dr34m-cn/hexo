@@ -187,8 +187,7 @@ const closeDialog = () => {
 ```
 
 ```html
-<el-dialog top="7vh" :before-close="closeDialog" v-model="dialogShow" width="1200px"
-            title="Dialog" :append-to-body="true" :close-on-click-modal="false">
+<el-dialog top="7vh" :fullscreen="false" :before-close="closeDialog" v-model="dialogShow" width="1200px" title="Dialog" :append-to-body="true" :close-on-click-modal="false">
     <template #footer>
         <span class="dialog-footer">
             <el-button type="primary" @click="closeDialog">我已知晓</el-button>
