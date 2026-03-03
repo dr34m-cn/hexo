@@ -128,7 +128,7 @@ const delItem = (id) => {
 }
 ```
 
-### el-table
+### [el-table](https://element-plus.org/zh-CN/component/table#table-api)
 
 ```js
 const getData = () => {
@@ -174,7 +174,7 @@ const handleCurrentChange = (val) => {
 </div>
 ```
 
-### el-dialog
+### [el-dialog](https://element-plus.org/zh-CN/component/dialog#api)
 
 ```js
 const dialogShow = ref(false);
