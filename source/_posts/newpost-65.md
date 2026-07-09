@@ -14,27 +14,27 @@ date: 2026-07-09 13:01:50
 
 ## 索引表
 
-| 游戏所在部  | 任务名                    | 攻略位置                              |
-| ----------- | ------------------------- | ------------------------------------- |
-| 第一部第1章 | Operation: Friendly Skies | [查看攻略](#operation-friendly-skies) |
-| 第一部第2章 | Operation: Squeaky Clean  | [查看攻略](#operation-squeaky-clean)  |
-| 第一部第3章 | Operation: Deep Dive      | [查看攻略](#operation-deep-dive)      |
-| 第一部第4章 | Operation: Winter Break   | [查看攻略](#operation-winter-break)   |
-| 第一部第5章 | Vacation: First Class     | [查看攻略](#vacation-first-class)     |
-| 第一部第6章 | Operation: Seat Of Power  | [查看攻略](#operation-seat-of-power)  |
-| 第一部第7章 | Operation: Death Engine   | [查看攻略](#operation-death-engine)   |
-| 第二部第1章 | Operation: Stage Fright   | [查看攻略](#operation-stage-fright)   |
-| 第二部第2章 | Operation: Jet Set        | [查看攻略](#operation-jet-set)        |
-| 第二部第3章 | Operation: Eaves Drop     | [查看攻略](#operation-eaves-drop)     |
-| 第二部第4章 | Operation: Party Crasher  | [查看攻略](#operation-party-crasher)  |
-| 第二部第5章 | Operation: Safe and Sound | [查看攻略](#operation-safe-and-sound) |
-| 第二部第6章 | Operation: Rising Phoenix | [查看攻略](#operation-rising-phoenix) |
-| 第三部第1章 | Operation: House Call     | [查看攻略](#operation-house-call)     |
-| 第三部第2章 | Operation: Not a Drill    | [查看攻略](#operation-not-a-drill)    |
-| 第三部第3章 | Operation: Blind Spot     | [查看攻略](#operation-blind-spot)     |
-| 第三部第4章 | Operation: Hot Water      | [查看攻略](#operation-hot-water)      |
-| 第三部第5章 | Operation: Cold Shoulder  | [查看攻略](#operation-cold-shoulder)  |
-| 第三部第6章 | Operation: KBOOM          | [查看攻略](#operation-kboom)          |
+| 游戏所在部 | 任务名 | 攻略位置 |
+|---|---|---|
+| 第一部第1章 | Operation: Friendly Skies | [查看攻略](#Operation-Friendly-Skies) |
+| 第一部第2章 | Operation: Squeaky Clean | [查看攻略](#Operation-Squeaky-Clean) |
+| 第一部第3章 | Operation: Deep Dive | [查看攻略](#Operation-Deep-Dive) |
+| 第一部第4章 | Operation: Winter Break | [查看攻略](#Operation-Winter-Break) |
+| 第一部第5章 | Vacation: First Class | [查看攻略](#Vacation-First-Class) |
+| 第一部第6章 | Operation: Seat Of Power | [查看攻略](#Operation-Seat-Of-Power) |
+| 第一部第7章 | Operation: Death Engine | [查看攻略](#Operation-Death-Engine) |
+| 第二部第1章 | Operation: Stage Fright | [查看攻略](#Operation-Stage-Fright) |
+| 第二部第2章 | Operation: Jet Set | [查看攻略](#Operation-Jet-Set) |
+| 第二部第3章 | Operation: Eaves Drop | [查看攻略](#Operation-Eaves-Drop) |
+| 第二部第4章 | Operation: Party Crasher | [查看攻略](#Operation-Party-Crasher) |
+| 第二部第5章 | Operation: Safe and Sound | [查看攻略](#Operation-Safe-and-Sound) |
+| 第二部第6章 | Operation: Rising Phoenix | [查看攻略](#Operation-Rising-Phoenix) |
+| 第三部第1章 | Operation: House Call | [查看攻略](#Operation-House-Call) |
+| 第三部第2章 | Operation: Not a Drill | [查看攻略](#Operation-Not-a-Drill) |
+| 第三部第3章 | Operation: Blind Spot | [查看攻略](#Operation-Blind-Spot) |
+| 第三部第4章 | Operation: Hot Water | [查看攻略](#Operation-Hot-Water) |
+| 第三部第5章 | Operation: Cold Shoulder | [查看攻略](#Operation-Cold-Shoulder) |
+| 第三部第6章 | Operation: KBOOM | [查看攻略](#Operation-KBOOM) |
 
 ## 第一部
 
